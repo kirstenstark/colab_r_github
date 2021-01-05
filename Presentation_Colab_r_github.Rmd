@@ -22,7 +22,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 - Link to slides and preprint
 
-## RStudio Projects - What & Why?
+## 1. RStudio Projects - What & Why?
 
 - What it does
   + ...
@@ -31,13 +31,76 @@ knitr::opts_chunk$set(echo = FALSE)
   + ...
   + ...
 
-## RStudio Projects - How?
+## 1. RStudio Projects - How?
 
 - In RStudio: File > New Project > ...
 - (Example using the sleepstudy data set from lme4)
 
-## RStudio Projects - Troubleshooting
+## 1. RStudio Projects - Troubleshooting
 
-- 
+- If necessary
 
+## 2. RMarkdown - What & Why?
+
+- What it does
+  + ...
+  + ...
+- Why it helps
+  + ...
+  + ...
+
+## 2. RMarkdown - How?
+
+- ...
+
+## 2. RMarkdown - Troubleshooting
+
+## 3. Git + GitHub - What & Why?
+
+- What it does
+  + ...
+  + ...
+- Why it helps
+  + ...
+  + ...
+
+## 3. Git + GitHub - How?
+
+- ...
+
+## 3. Git + GitHub - Troubleshooting
+
+## 4. renv - What & Why?
+
+- What it does
+  + ...
+  + ...
+- Why it helps
+  + ...
+  + ...
+
+## 4. renv - How?
+
+- ...
+
+## 4. renv - Troubleshooting
+
+## 5. Docker - What & Why?
+
+- What it does
+  + ...
+  + ...
+- Why it helps
+  + ...
+  + ...
+
+## 5. Docker - How?
+
+- ...
+
+## 5. Docker - Troubleshooting
+
+## 6. Start colaborating
+
+- ...
 
