@@ -2,11 +2,27 @@
 title: "Collaborating on research \n using R and github"
 author: "Alexander Enge & Kirsten Stark"
 date: "13/01/2021"
-output: ioslides_presentation
+output:
+  ioslides_presentation:
+    smaller: true
+    transition: "faster"
+    logo: "figures/hu_logo.png"
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{css styling}
+slides > slide:not(.nobackground):before {
+  width: 100px;
+  height: 100px;
+  background-size: 100px 100px;
+}
+
+slides > slide {
+  background: linear-gradient(white, white);
+}
 ```
 
 ## Schedule
@@ -18,9 +34,9 @@ knitr::opts_chunk$set(echo = FALSE)
 5. Docker
 6. Start collaborating
 
-## Kudos to Peikert + Brandmaier
+## Kudos
 
-- Link to slides and preprint
+- Peikert, A., & Brandmaier, A. M. (2020). A Reproducible Data Analysis Workflow with R Markdown, Git, Make, and Docker. https://doi.org/10.31234/osf.io/8xzqy
 
 ## 1. RStudio Projects - What & Why?
 
