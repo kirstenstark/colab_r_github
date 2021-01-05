@@ -14,6 +14,27 @@ output:
 library(knitr)
 opts_chunk$set(echo = FALSE)
 ```
+<style>
+div.footnotes {
+  bottom: .01;
+  width: 80%;
+  font-size: 0.55em;
+}
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script><script>
+$(document).ready(function() {
+  $('slide:not(.backdrop):not(.title-slide)').append('<div class=\"footnotes\">');
+  $('footnote').each(function(index) {
+    var text  = $(this).html();
+    var fnNum = (index+1).toString();
+    $(this).html(fnNum.sup());
+    var footnote   = fnNum + '. ' + text + '<br/>';
+    var oldContent = $(this).parents('slide').children('div.footnotes').html();
+    var newContent = oldContent + footnote;
+    $(this).parents('slide').children('div.footnotes').html(newContent);
+  });});
+</script>
 
 ```{css styling}
 slides > slide:not(.nobackground):before {
@@ -29,10 +50,10 @@ slides > slide {
 
 ## Schedule
 
-1. RStudio Projects
-2. RMarkdown
-3. Git + GitHub
-4. Environmente management: renv
+1. Working in different contexts: RStudio Projects
+2. Dynamic document generation: RMarkdown
+3. Version control: Git + GitHub
+4. Environment management: renv
 5. Docker
 6. Start collaborating
 
@@ -45,13 +66,20 @@ include_graphics("figures/peikert_preprint.png")
 ```
 
 ## 1. RStudio Projects - What & Why?
+```{r out.extra='style="float:right; padding:10px"', out.width = '10%'}
+include_graphics("figures/rproject.png")
+```
 
-- What it does:
-  + ...
-  + ...
-- Why it helps:
-  + ...
-  + ...
+- **What it does**:
+  + allows to work in multiple different contexts (projects), e.g. one for each experiment
+  + each project is own working directory, workspace, history, and source documents
+  + each project is associated with a folder on your computer (= working directory)
+- **Why it helps**:
+  + have a separate, shareable working environment for each experiment
+  + keep all the files associated with a project together — data, scripts, results, figures
+  + work on multiple projects at once, each associated with its packages (and package versions), loaded data, etc. 
+  + use only relative paths
+  + necessary to apply version control
 
 ## 1. RStudio Projects - How?
 
@@ -62,28 +90,35 @@ include_graphics("figures/peikert_preprint.png")
 
 - If necessary
 
-## 2. RMarkdown - What & Why?
+## 2. Dynamic document generation: RMarkdown - What & Why?
+```{r out.extra='style="float:right; padding:10px"', out.width = '10%'}
+include_graphics("figures/rmarkdown.png")
+```
 
-- What it does:
-  + ...
-  + ...
-- Why it helps:
-  + ...
-  + ...
+- **What it does:**
+  + Creates dynamic documents with embedded chunks of code (R, python, Julia, stan, ...), computed results , written text etc. (= LaTex) 
+  + Markdown-files can be exported to documents (docx, rtf), presentations, pdfs, or websites (html) <footnote content="packages"> e.g using the `knitr` (Xie, 2015, 2020) and `tinytex` (Xie, 2015, 2020; for pdfs)</footnote>
+  + R code is dynamically rendered, and can be given in separate chunks ('''{r}   ''') or inline (' r  … ')
+- **Why it helps:**
+  + Simple language ($\neq$ LaTex)
+  + Integrates directly with statistical software (R Studio)
+  + Saves code and output in one file
+  + Reduces copy&paste errors: reported results consistent with actual results
 
-## 2. RMarkdown - How?
+
+## 2. Dynamic document generation: RMarkdown - How?
 
 - ...
 
-## 2. RMarkdown - Troubleshooting
+## 2. Dynamic document generation: RMarkdown - Troubleshooting
 
-## 3. Git + GitHub
+## 3. Version control: Git + GitHub
 
 ```{r, fig.align='right'}
 include_graphics("figures/jesus.jpg")
 ```
 
-## 3. Git + GitHub - What & Why?
+## 3. Version control: Git + GitHub - What & Why?
 
 - What it does:
   + ...
@@ -92,7 +127,7 @@ include_graphics("figures/jesus.jpg")
   + ...
   + ...
 
-## 3. Git + GitHub - How?
+## 3. Version control: Git + GitHub - How?
 
 - ...
 
