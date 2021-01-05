@@ -9,27 +9,35 @@ output: ioslides_presentation
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-## R Markdown
+## Schedule
 
-This is an R Markdown presentation. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+1. RStudio Projects
+2. RMarkdown
+3. Git + GitHub
+4. renv
+5. Docker
+6. Start collaborating
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document.
+## Kudos to Peikert + Brandmaier
 
-## Slide with Bullets
+- Link to slides and preprint
 
-- Bullet 1
-- Bullet 2
-- Bullet 3
+## RStudio Projects - What & Why?
 
-## Slide with R Output
+- What it does
+  + ...
+  + ...
+- Why it helps
+  + ...
+  + ...
 
-```{r cars, echo = TRUE}
-summary(cars)
-```
+## RStudio Projects - How?
 
-## Slide with Plot
+- In RStudio: File > New Project > ...
+- (Example using the sleepstudy data set from lme4)
 
-```{r pressure}
-plot(pressure)
-```
+## RStudio Projects - Troubleshooting
+
+- 
+
 
