@@ -32,7 +32,7 @@ slides > slide {
 1. RStudio Projects
 2. RMarkdown
 3. Git + GitHub
-4. renv
+4. Environmente management: renv
 5. Docker
 6. Start collaborating
 
@@ -40,7 +40,7 @@ slides > slide {
 
 - Peikert, A., & Brandmaier, A. M. (2020). A Reproducible Data Analysis Workflow with R Markdown, Git, Make, and Docker. https://doi.org/10.31234/osf.io/8xzqy
 
-```{r out.width="75%", fig.align="center"}
+```{r out.width='75%', fig.align='center'}
 include_graphics("figures/peikert_preprint.png")
 ```
 
@@ -79,7 +79,7 @@ include_graphics("figures/peikert_preprint.png")
 
 ## 3. Git + GitHub
 
-```{r out.height="100%", fig.align="left"}
+```{r, fig.align='right'}
 include_graphics("figures/jesus.jpg")
 ```
 
@@ -97,6 +97,21 @@ include_graphics("figures/jesus.jpg")
 - ...
 
 ## 3. Git + GitHub - Troubleshooting
+
+## 4. Environment management: renv
+
+```{r out.width='70%', fig.align='right'}
+# # This was used to create the plot. To run this code, please install pkggraph and ggplot2.
+# library(pkggraph)
+# library(dplyr)
+# library(ggplot2)
+# get_all_dependencies("lmerTest", level = 10, relation = c("Depends", "Imports"), strict = TRUE) %>%
+#   make_neighborhood_graph() %>%
+#   plot(background = "white") +
+#   theme(panel.border = element_rect(color = "white")) +
+#   ggsave("figures/lmerTest_depends.png", width = 20, height = 14, units = "cm", dpi = 600)
+include_graphics("figures/lmerTest_depends.png")
+```
 
 ## 4. renv - What & Why?
 
