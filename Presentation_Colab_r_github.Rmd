@@ -4,13 +4,15 @@ author: "Alexander Enge & Kirsten Stark"
 date: "13/01/2021"
 output:
   ioslides_presentation:
+    widescreen: true
     smaller: true
     transition: "faster"
     logo: "figures/hu_logo.png"
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+library(knitr)
+opts_chunk$set(echo = FALSE)
 ```
 
 ```{css styling}
@@ -34,9 +36,13 @@ slides > slide {
 5. Docker
 6. Start collaborating
 
-## Kudos
+## 0. Kudos
 
 - Peikert, A., & Brandmaier, A. M. (2020). A Reproducible Data Analysis Workflow with R Markdown, Git, Make, and Docker. https://doi.org/10.31234/osf.io/8xzqy
+
+```{r out.width="75%", fig.align="center"}
+include_graphics("figures/peikert_preprint.png")
+```
 
 ## 1. RStudio Projects - What & Why?
 
@@ -73,7 +79,9 @@ slides > slide {
 
 ## 3. Git + GitHub
 
-![](figures/jesus.jpg)
+```{r out.height="100%", fig.align="left"}
+include_graphics("figures/jesus.jpg")
+```
 
 ## 3. Git + GitHub - What & Why?
 
