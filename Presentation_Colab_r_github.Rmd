@@ -46,10 +46,10 @@ include_graphics("figures/peikert_preprint.png")
 
 ## 1. RStudio Projects - What & Why?
 
-- What it does
+- What it does:
   + ...
   + ...
-- Why it helps
+- Why it helps:
   + ...
   + ...
 
@@ -64,10 +64,10 @@ include_graphics("figures/peikert_preprint.png")
 
 ## 2. RMarkdown - What & Why?
 
-- What it does
+- What it does:
   + ...
   + ...
-- Why it helps
+- Why it helps:
   + ...
   + ...
 
@@ -85,10 +85,10 @@ include_graphics("figures/jesus.jpg")
 
 ## 3. Git + GitHub - What & Why?
 
-- What it does
+- What it does:
   + ...
   + ...
-- Why it helps
+- Why it helps:
   + ...
   + ...
 
@@ -115,25 +115,41 @@ include_graphics("figures/lmerTest_depends.png")
 
 ## 4. renv - What & Why?
 
-- What it does
-  + ...
-  + ...
-- Why it helps
-  + ...
-  + ...
+- What it does:
+  + Creates a project-specific library of packages in the project folder
+  + Overwrites `install.packages()` to install packages there
+  + Keeps track of package versions in the `renv.lock` file
+- Why it helps:
+  + Keeps package versions untouched by other projects
+  + Allows you to revert to the previous state when an update has broken your analysis
+  + Makes it easier to share package versions with your collaborators (e.g., via GitHub)
+
+```{r fig.align='right'}
+include_graphics("figures/renv.png")
+```
 
 ## 4. renv - How?
 
-- ...
+1. Install the renv package: `install.packages(renv)`
+2. Initialize your project library: `renv::init()`
+3. Install and update your packages as usual: `install.packages("pkgname")`
+3. Save the current state of the project library: `renv::snapshot()`
+4. Revert to a previous state if an update caused problems: `renv::restore()`
+
+You can skip step #2 if you select "Use renv with this project" during project creation.
+
+```{r fig.align='right'}
+include_graphics("figures/renv.png")
+```
 
 ## 4. renv - Troubleshooting
 
 ## 5. Docker - What & Why?
 
-- What it does
+- What it does:
   + ...
   + ...
-- Why it helps
+- Why it helps:
   + ...
   + ...
 
