@@ -19,6 +19,7 @@ div.footnotes {
   bottom: .01;
   width: 80%;
   font-size: 0.55em;
+  margin-left: 120px;
 }
 </style>
 
@@ -52,21 +53,12 @@ slides > slide {
 
 ## Schedule
 
-<<<<<<< HEAD
-1. Working in different contexts: RStudio Projects
-2. Dynamic document generation: RMarkdown
-3. Version control: Git + GitHub
-4. Environment management: renv
-5. Docker
-6. Start collaborating
-=======
-1. RStudio Projects
-2. RMarkdown
-3. Git + GitHub
+1. **Working in different contexts:** RStudio Projects
+2. **Dynamic document generation:** RMarkdown
+3. **Version control:** Git + GitHub
 4. **Environment management**: renv
 5. **Containerization**: Docker
 6. **Start collaborating**
->>>>>>> 9ca8df730dc22aef346b9b4b6549f14cef5e23a7
 
 ## 0. Kudos
 
@@ -76,36 +68,31 @@ slides > slide {
 include_graphics("figures/peikert_preprint.png")
 ```
 
-<<<<<<< HEAD
-## 1. RStudio Projects - What & Why?
+## 1. Working in different contexts: RStudio Projects - What & Why?
 ```{r out.extra='style="float:right; padding:10px"', out.width = '10%'}
 include_graphics("figures/rproject.png")
 ```
-=======
-## 1. RStudio Projects – What & Why?
->>>>>>> 9ca8df730dc22aef346b9b4b6549f14cef5e23a7
 
 - **What it does**:
-  + allows to work in multiple different contexts (projects), e.g. one for each experiment
-  + each project is own working directory, workspace, history, and source documents
-  + each project is associated with a folder on your computer (= working directory)
+  + Allows to work in multiple different contexts (projects), e.g. one for each experiment
+  + Each project is own working directory, workspace, history, and source documents
+  + Each project is associated with a folder on your computer (= working directory)
 - **Why it helps**:
-  + have a separate, shareable working environment for each experiment
-  + keep all the files associated with a project together — data, scripts, results, figures
-  + work on multiple projects at once, each associated with its packages (and package versions), loaded data, etc. 
-  + use only relative paths
-  + necessary to apply version control
+  + Have a separate, shareable working environment for each experiment
+  + Keep all the files associated with a project together — data, scripts, results, figures
+  + Work on multiple projects at once, each associated with its packages (and package versions), loaded data, etc. 
+  + Use only relative paths
+  + Necessary basis for version control
 
-## 1. RStudio Projects – How?
+## 1. Working in different contexts: RStudio Projects – How?
 
 - In RStudio: File > New Project > ...
 - (Example using the sleepstudy data set from lme4)
 
-## 1. RStudio Projects – Troubleshooting
+## 1. Working in different contexts: RStudio Projects – Troubleshooting
 
 - If necessary
 
-<<<<<<< HEAD
 ## 2. Dynamic document generation: RMarkdown - What & Why?
 ```{r out.extra='style="float:right; padding:10px"', out.width = '10%'}
 include_graphics("figures/rmarkdown.png")
@@ -120,38 +107,20 @@ include_graphics("figures/rmarkdown.png")
   + Integrates directly with statistical software (R Studio)
   + Saves code and output in one file
   + Reduces copy&paste errors: reported results consistent with actual results
-=======
-## 2. RMarkdown – What & Why?
->>>>>>> 9ca8df730dc22aef346b9b4b6549f14cef5e23a7
 
-
-<<<<<<< HEAD
 ## 2. Dynamic document generation: RMarkdown - How?
 
 - ...
 
 ## 2. Dynamic document generation: RMarkdown - Troubleshooting
-=======
-## 2. RMarkdown – How?
-
-- ...
-
-## 2. RMarkdown – Troubleshooting
 
 - If necessary
->>>>>>> 9ca8df730dc22aef346b9b4b6549f14cef5e23a7
 
-## 3. Version control: Git + GitHub
+## 3. Version control: Git + GitHub - What & Why?
 
 ```{r, fig.align='right'}
 include_graphics("figures/jesus.jpg")
 ```
-
-<<<<<<< HEAD
-## 3. Version control: Git + GitHub - What & Why?
-=======
-## 3. Git + GitHub – What & Why?
->>>>>>> 9ca8df730dc22aef346b9b4b6549f14cef5e23a7
 
 - What it does:
   + ...
@@ -160,15 +129,11 @@ include_graphics("figures/jesus.jpg")
   + ...
   + ...
 
-<<<<<<< HEAD
-## 3. Version control: Git + GitHub - How?
-=======
-## 3. Git + GitHub – How?
->>>>>>> 9ca8df730dc22aef346b9b4b6549f14cef5e23a7
+## 3. Version control: Git + GitHub – How?
 
 - ...
 
-## 3. Git + GitHub - Troubleshooting
+## 3. Version control: Git + GitHub - Troubleshooting
 
 - If necessary
 
