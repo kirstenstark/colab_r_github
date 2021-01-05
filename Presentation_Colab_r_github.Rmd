@@ -1,5 +1,5 @@
 ---
-title: "Collaborating on research \n using R and github"
+title: "Collaborating on Reproducible Code Using R and GitHub"
 author: "Alexander Enge & Kirsten Stark"
 date: "13/01/2021"
 output:
@@ -16,12 +16,14 @@ opts_chunk$set(echo = FALSE)
 ```
 
 ```{css styling}
+/* Make the HU logo bigger */
 slides > slide:not(.nobackground):before {
   width: 100px;
   height: 100px;
   background-size: 100px 100px;
 }
 
+/* Make the background plain white */
 slides > slide {
   background: linear-gradient(white, white);
 }
@@ -32,9 +34,9 @@ slides > slide {
 1. RStudio Projects
 2. RMarkdown
 3. Git + GitHub
-4. Environmente management: renv
-5. Docker
-6. Start collaborating
+4. **Environment management**: renv
+5. **Containerization**: Docker
+6. **Start collaborating**
 
 ## 0. Kudos
 
@@ -44,7 +46,7 @@ slides > slide {
 include_graphics("figures/peikert_preprint.png")
 ```
 
-## 1. RStudio Projects - What & Why?
+## 1. RStudio Projects – What & Why?
 
 - What it does:
   + ...
@@ -53,16 +55,16 @@ include_graphics("figures/peikert_preprint.png")
   + ...
   + ...
 
-## 1. RStudio Projects - How?
+## 1. RStudio Projects – How?
 
 - In RStudio: File > New Project > ...
 - (Example using the sleepstudy data set from lme4)
 
-## 1. RStudio Projects - Troubleshooting
+## 1. RStudio Projects – Troubleshooting
 
 - If necessary
 
-## 2. RMarkdown - What & Why?
+## 2. RMarkdown – What & Why?
 
 - What it does:
   + ...
@@ -71,11 +73,13 @@ include_graphics("figures/peikert_preprint.png")
   + ...
   + ...
 
-## 2. RMarkdown - How?
+## 2. RMarkdown – How?
 
 - ...
 
-## 2. RMarkdown - Troubleshooting
+## 2. RMarkdown – Troubleshooting
+
+- If necessary
 
 ## 3. Git + GitHub
 
@@ -83,7 +87,7 @@ include_graphics("figures/peikert_preprint.png")
 include_graphics("figures/jesus.jpg")
 ```
 
-## 3. Git + GitHub - What & Why?
+## 3. Git + GitHub – What & Why?
 
 - What it does:
   + ...
@@ -92,11 +96,13 @@ include_graphics("figures/jesus.jpg")
   + ...
   + ...
 
-## 3. Git + GitHub - How?
+## 3. Git + GitHub – How?
 
 - ...
 
 ## 3. Git + GitHub - Troubleshooting
+
+- If necessary
 
 ## 4. Environment management: renv
 
@@ -113,7 +119,7 @@ include_graphics("figures/jesus.jpg")
 include_graphics("figures/lmerTest_depends.png")
 ```
 
-## 4. renv - What & Why?
+## 4. renv – What & Why?
 
 - What it does:
   + Creates a project-specific library of packages in the project folder
@@ -128,7 +134,7 @@ include_graphics("figures/lmerTest_depends.png")
 include_graphics("figures/renv.png")
 ```
 
-## 4. renv - How?
+## 4. renv – How?
 
 1. Install the renv package: `install.packages(renv)`
 2. Initialize your project library: `renv::init()`
@@ -142,9 +148,17 @@ You can skip step #2 if you select "Use renv with this project" during project c
 include_graphics("figures/renv.png")
 ```
 
-## 4. renv - Troubleshooting
+## 4. renv – Troubleshooting
 
-## 5. Docker - What & Why?
+- If necessary
+
+## 5. Containerization: Docker
+
+```{r fig.align='right'}
+include_graphics("figures/containers.jpg")
+```
+
+## 5. Docker – What & Why?
 
 - What it does:
   + ...
@@ -153,11 +167,13 @@ include_graphics("figures/renv.png")
   + ...
   + ...
 
-## 5. Docker - How?
+## 5. Docker – How?
 
 - ...
 
-## 5. Docker - Troubleshooting
+## 5. Docker – Troubleshooting
+
+- If necessary
 
 ## 6. Start colaborating
 
