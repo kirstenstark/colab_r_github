@@ -1,7 +1,7 @@
 ---
-title: "Presentation_Colab_R_Github"
-author: "Alexander Enge, Kirsten Stark"
-date: "1/5/2021"
+title: "Collaborating on research \n using R and github"
+author: "Alexander Enge & Kirsten Stark"
+date: "13/01/2021"
 output: ioslides_presentation
 ---
 
