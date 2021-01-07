@@ -47,7 +47,18 @@ slides > slide:not(.nobackground):before {
 
 /* Make the background plain white */
 slides > slide {
-  background: linear-gradient(white, white);
+  background: white;
+}
+
+
+slides > slide.dark {
+  background: #072859 !important;
+}
+
+.auto-fadein h2{
+  color: white;
+  position: relative;
+  top: 100px;
 }
 ```
 
@@ -56,7 +67,7 @@ slides > slide {
 1. **Working in different contexts:** RStudio Projects
 2. **Dynamic document generation:** RMarkdown
 3. **Version control:** Git + GitHub
-4. **Environment management**: renv
+4. **Package management**: renv
 5. **Containerization**: Docker
 6. **Where should I start?**
 7. **Start collaborating**
@@ -71,7 +82,7 @@ include_graphics("figures/peikert_preprint.png")
 
 ## 0. Collaborating with yourself and others
 ```{r, fig.align='center'}
-include_graphics("figures/ResearchManagement.png")
+#include_graphics("figures/ResearchManagement.png")
 ```
 
 ## 1. Working in different contexts: RStudio Projects - What & Why?
@@ -215,72 +226,136 @@ include_graphics("figures/jesus.jpg")
 
 - If necessary
 
-## 4. Environment management: renv
+# 4. Package management: renv
 
-```{r out.width='70%', fig.align='right'}
+```{r out.width='55%', fig.align='right'}
 # # This was used to create the plot. To run this code, please install pkggraph and ggplot2.
-# library(pkggraph)
 # library(dplyr)
 # library(ggplot2)
-# get_all_dependencies("lmerTest", level = 10, relation = c("Depends", "Imports"), strict = TRUE) %>%
-#   make_neighborhood_graph() %>%
-#   plot(background = "white") +
-#   theme(panel.border = element_rect(color = "white")) +
+# pkggraph::init(local = TRUE)
+# pkggraph::get_all_dependencies("lmerTest", level = 10, relation = c("Depends", "Imports"), strict = TRUE) %>%
+#   pkggraph::make_neighborhood_graph() %>%
+#   plot() +
+#   theme(panel.border = element_rect()) +
 #   ggsave("figures/lmerTest_depends.png", width = 20, height = 14, units = "cm", dpi = 600)
 include_graphics("figures/lmerTest_depends.png")
 ```
 
 ## 4. renv – What & Why?
 
+```{r out.extra='style="float:right; padding:10px"', out.width = '10%'}
+include_graphics("figures/renv.png")
+```
+
 - What it does:
   + Creates a project-specific library of packages in the project folder
-  + Overwrites `install.packages()` to install packages there
+  + Overwrites `install.packages()` to install packages in this local library
   + Keeps track of package versions in the `renv.lock` file
+
+<br>
+
 - Why it helps:
   + Keeps package versions untouched by other projects
   + Allows you to revert to the previous state when an update has broken your analysis
   + Makes it easier to share package versions with your collaborators (e.g., via GitHub)
 
-```{r fig.align='right'}
+## 4. renv – How?
+
+```{r out.extra='style="float:right; padding:10px"', out.width = '10%'}
 include_graphics("figures/renv.png")
 ```
+
+- Install renv just like any other R package via `install.packages(renv)`
+- Initialize your project library via `renv::init()`
+- Instead, you can also select "Use renv with this project" during project creation
+- After successfully installing or updating packages, use `renv::snapshot()`
+- If you want to revert to previous state (e.g., if an update caused problems), use `renv::restore()`
 
 ## 4. renv – How?
 
-1. Install the renv package: `install.packages(renv)`
-2. Initialize your project library: `renv::init()`
-3. Install and update your packages as usual: `install.packages("pkgname")`
-3. Save the current state of the project library: `renv::snapshot()`
-4. Revert to a previous state if an update caused problems: `renv::restore()`
+```{r fig.align='right', out.width='90%'}
+include_graphics("figures/renv_init.png")
+```
 
-You can skip step #2 if you select "Use renv with this project" during project creation.
+## 4. renv – Code along
 
-```{r fig.align='right'}
+- Initialize renv for your sleepstudy project using `renv::init()`
+- From the Files pane in RStudio, take a look at the `renv.lock` file
+- Install a new package:
+
+```{r, echo=TRUE, results='hide'}
+install.packages("cowsay")
+```
+
+- Acutally use the package in one of your scripts:
+
+```{r, echo=TRUE, results='hide'}
+cowsay::say("Hello world", "cow")
+```
+
+- Write this change to the lockfile using `renv::snapshot()`
+- Commit and push your changes to GitHub
+
+## 4. renv – How?
+
+```{r out.extra='style="float:right; padding:10px"', out.width = '10%'}
 include_graphics("figures/renv.png")
 ```
 
+Restoring someone else's package versions:
+
+1. Clone or pull the repository from GitHub
+2. Open the the RStudio project (e.g. via the `projectname.Rproj` file)
+3. Use `renv::restore()` to install the package versions from the `renv.lock` file
+
 ## 4. renv – Troubleshooting
 
-- If necessary
+- There might be some (inconsequential) warnings when switching between Mac and Windows
+- At least on Windows, you need to have Rtools installed when installing packages that are not on CRAN (https://cran.r-project.org/bin/windows/Rtools/)
+- Installing and loading packages may take a while, especially if your project lives on a network drive<br>(such as `N:/`)
 
-## 5. Containerization: Docker
+# 5. Containerization: Docker
 
-```{r fig.align='right'}
+```{r fig.align='right', out.width='55%'}
 include_graphics("figures/containers.jpg")
 ```
 
 ## 5. Docker – What & Why?
 
 - What it does:
-  + ...
-  + ...
+  + Creates a small, linux-based virtual machine on your computer
+  + Makes it possible to run your scripts (or render your `.Rmd` files) on this virtual system
+  + The recipe to build this system is stored in a `Dockerfile` that can be shared via GitHub
+
+<br>
+
 - Why it helps:
-  + ...
-  + ...
+  + Ensures long-term reproducibility regardless
+  + Prevents differences between operating systems, base R versions, languages etc.
+
+```{r out.extra='style="float:right; padding:10px"', out.width = '10%'}
+include_graphics("figures/docker.png")
+```
 
 ## 5. Docker – How?
 
-- ...
+- Install Docker from https://docs.docker.com/installation/
+- From the terminal, start a container and mount your local project folder:
+
+```{bash, echo=TRUE, eval=FALSE}
+docker run -d  -e PASSWORD=1234 -p 8787:8787 -v /path/to/your/project:/home/rstudio/ rocker/rstudio
+```
+
+- You can then access RStudio (running in the container) by opening http://localhost:8787 in your web browser (username: rstudio, password: 1234)
+- You can also build your own container by:
+  + Choosing a base image from https://hub.docker.com/u/rocker (e.g., one including the tidyverse or LaTeX)
+  + Creating a `Dockerfile` in your project directy, specyfing additional steps to execute when building the container, e.g., `install.packages("renv"); renv::restore()`
+  
+```{r out.extra='style="float:right; padding:10px"', out.width = '10%'}
+include_graphics("figures/docker.png")
+```
+
+- For detailled instructions, see Peikert & Brandmaier (2020)
 
 ## 5. Docker – Troubleshooting
 
