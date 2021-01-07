@@ -58,7 +58,8 @@ slides > slide {
 3. **Version control:** Git + GitHub
 4. **Environment management**: renv
 5. **Containerization**: Docker
-6. **Start collaborating**
+6. **Where should I start?**
+7. **Start collaborating**
 
 ## 0. Kudos
 
@@ -66,6 +67,11 @@ slides > slide {
 
 ```{r out.width='75%', fig.align='center'}
 include_graphics("figures/peikert_preprint.png")
+```
+
+## 0. Collaborating with yourself and others
+```{r, fig.align='center'}
+include_graphics("figures/ResearchManagement.png")
 ```
 
 ## 1. Working in different contexts: RStudio Projects - What & Why?
@@ -172,7 +178,7 @@ include_graphics("figures/rmarkdown.png")
 
 - **What it does:**
   + Creates dynamic documents with embedded chunks of code (R, python, Julia, stan, ...), computed results , written text etc. (= LaTex) 
-  + Markdown-files can be exported to documents (docx, rtf), presentations, pdfs, or websites (html) <footnote content="packages"> e.g using the `knitr` (Xie, 2015, 2020) and `tinytex` (Xie, 2015, 2020; for pdfs)</footnote>
+  + Markdown-files can be exported to documents (docx, rtf), presentations, pdfs, websites (html), ... <footnote content="packages"> e.g using the `knitr` (Xie, 2015, 2020) and `tinytex` (Xie, 2015, 2020; for pdfs)</footnote>
   + R code is dynamically rendered, and can be given in separate chunks ('''{r}   ''') or inline (' r  … ')
 - **Why it helps:**
   + Simple language ($\neq$ LaTex)
@@ -182,7 +188,7 @@ include_graphics("figures/rmarkdown.png")
 
 ## 2. Dynamic document generation: RMarkdown - How?
 
-- ...
+- Type to console: `install.packages("rmarkdown")`
 
 ## 2. Dynamic document generation: RMarkdown - Troubleshooting
 
@@ -280,7 +286,11 @@ include_graphics("figures/containers.jpg")
 
 - If necessary
 
-## 6. Start colaborating
+## 6. Where should I start?
+
+- Suggested order of steps, minimal and maximal version
+
+## 7. Start colaborating
 
 - ...
 
