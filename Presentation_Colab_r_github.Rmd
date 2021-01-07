@@ -79,11 +79,15 @@ Your code runs and reproduces identical results at different time points and on 
 
 </div>
 
-```{r, fig.align='center', out.width='70%'}
+```{r fig.align='center', out.width='70%'}
 include_graphics("figures/turing.jpg")
 ```
 
 ## Schedule
+
+```{r out.extra='style="float:right; padding:10px"', out.width='30%'}
+include_graphics("figures/schedule_icons.png")
+```
 
 1. **Working in different contexts:** RStudio Projects
 2. **Dynamic document generation:** RMarkdown
