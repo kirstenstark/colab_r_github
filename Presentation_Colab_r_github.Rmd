@@ -70,7 +70,7 @@ include_graphics("figures/peikert_preprint.png")
 
 ## 1. Working in different contexts: RStudio Projects - What & Why?
 ```{r out.extra='style="float:right; padding:10px"', out.width = '10%'}
-include_graphics("figures/rproject.png")
+include_graphics("figures/RStudioProject.png")
 ```
 
 - **What it does**:
@@ -87,7 +87,79 @@ include_graphics("figures/rproject.png")
 ## 1. Working in different contexts: RStudio Projects – How?
 
 - In RStudio: File > New Project > ...
-- (Example using the sleepstudy data set from lme4)
+
+```{r out.extra='style="float:left; padding:10px"', out.width = '40%'}
+include_graphics("figures/NewProject.png")
+```
+```{r out.extra='style="float:right; padding:10px"', out.width = '50%'}
+include_graphics("figures/CreateProject.png")
+```
+
+## 1. Working in different contexts: RStudio Projects – Version 1: Create new project
+
+```{r out.extra='style="float:left; padding:10px"', out.width = '35%'}
+include_graphics("figures/CreateProject.png")
+```
+```{r out.extra='style="float:right; padding:10px"', out.width = '55%'}
+include_graphics("figures/CreateNewProject.png")
+```
+
+## 1. Working in different contexts: RStudio Projects – Version 1: Create new project
+
+```{r out.extra='style="float:left; padding:10px"', out.width = '35%'}
+include_graphics("figures/CreateNewProject.png")
+```
+```{r out.extra='style="float:right; padding:10px"', out.width = '55%'}
+include_graphics("figures/CreateNewProjectType.png")
+```
+
+## 1. Working in different contexts: RStudio Projects – Version 1: Create new project
+
+```{r out.extra='style="float:left"', out.width = '100%'}
+include_graphics("figures/RProjectSleepstudy.png")
+```
+
+## 1. Working in different contexts: RStudio Projects – Version 2: Create from existing directory
+
+```{r out.extra='style="float:left; padding:10px"', out.width = '35%'}
+include_graphics("figures/CreateProject.png")
+```
+```{r out.extra='style="float:right; padding:10px"', out.width = '55%'}
+include_graphics("figures/CreateProjectFromExistingDirectory.png")
+```
+
+## 1. Working in different contexts: RStudio Projects – Version 3: Create from version control (Git)
+
+```{r out.extra='style="float:left; padding:10px"', out.width = '35%'}
+include_graphics("figures/CreateProject.png")
+```
+```{r out.extra='style="float:right; padding:10px"', out.width = '55%'}
+include_graphics("figures/CreateProjectFromVersionControl.png")
+```
+
+## 1. Working in different contexts: RStudio Projects – Version 3: Create from version control (Git)
+
+```{r out.extra='style="float:left; padding:10px"', out.width = '35%'}
+include_graphics("figures/CreateProjectFromVersionControl.png")
+```
+```{r out.extra='style="float:right; padding:10px"', out.width = '55%'}
+include_graphics("figures/CloneGitRepository.png")
+```
+
+## 1. Working in different contexts: RStudio Projects – Open and manage projects
+
+```{r out.extra='style="float:left; padding:10px"', out.width = '25%'}
+include_graphics("figures/OpenProject.png")
+```
+```{r out.extra='style="float:left; padding:10px"', out.width = '70%'}
+include_graphics("figures/ChooseProject.png")
+```
+
+## 1. Working in different contexts: RStudio Projects – Open and manage projects
+```{r, fig.align='center'}
+include_graphics("figures/ProjectOptions.png")
+```
+
 
 ## 1. Working in different contexts: RStudio Projects – Troubleshooting
 
