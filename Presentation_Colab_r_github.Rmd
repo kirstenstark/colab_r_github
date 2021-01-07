@@ -83,7 +83,7 @@ include_graphics("figures/peikert_preprint.png")
 
 ## 0. Collaborating with yourself and others
 ```{r, fig.align='center'}
-#include_graphics("figures/ResearchManagement.png")
+include_graphics("figures/ResearchManagement.png")
 ```
 
 ## 1. Working in different contexts: RStudio Projects - What & Why?
@@ -174,7 +174,7 @@ include_graphics("figures/ChooseProject.png")
 ```
 
 ## 1. Working in different contexts: RStudio Projects – Open and manage projects
-```{r, fig.align='center'}
+```{r, fig.align='center', out.width = '55%'}
 include_graphics("figures/ProjectOptions.png")
 ```
 
@@ -234,6 +234,7 @@ include_graphics("figures/RMarkdown_fileformat.png")
 ## {data-background="figures/RMarkdownFile.png"}
 ## {data-background="figures/RMarkdown_output.png"}
 ## {data-background="figures/RMarkdown_output.png"}
+
 ```{r fig.align = "right", out.width = '35%'}
 include_graphics("figures/RMarkdown_output_files.png")
 ```
