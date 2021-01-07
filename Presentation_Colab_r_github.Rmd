@@ -220,7 +220,10 @@ include_graphics("figures/RMarkdown_fileformat.png")
 ## {data-background="figures/RMarkdown_file_knit.png"}
 ## {data-background="figures/RMarkdownFile.png"}
 ## {data-background="figures/RMarkdown_output.png"}
-
+## {data-background="figures/RMarkdown_output.png"}
+```{r fig.align = "right", out.width = '35%'}
+include_graphics("figures/RMarkdown_output_files.png")
+```
 
 
 ## 2. Dynamic document generation: RMarkdown - Troubleshooting
