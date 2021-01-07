@@ -45,16 +45,17 @@ slides > slide:not(.nobackground):before {
   background-size: 100px 100px;
 }
 
-/* Make the background plain white */
+/* Make the background plain white on normal slides*/
 slides > slide {
   background: white;
 }
 
-
+/* Make the background HU blue on title slides */
 slides > slide.dark {
   background: #072859 !important;
 }
 
+/* Make the font white on title slides */
 .auto-fadein h2{
   color: white;
   position: relative;
@@ -393,9 +394,11 @@ include_graphics("figures/docker.png")
 
 - For detailled instructions, see Peikert & Brandmaier (2020)
 
-## 5. Docker – Troubleshooting
+## 5. Docker – How?
 
-- If necessary
+- Some additional tools based on Docker:
+  + With **binder** (https://mybinder.org) and **Code Ocean** (https://codeocean.com), you can run your analysis in the cloud; they will even create the `Dockerfile` for you if you don't have your own one
+  + **Singularity** (https://sylabs.io) is a fully compatible, open source clone of Docker which you can use on systems where you don't have root access (e.g., on high performance clusters)
 
 ## 6. Where should I start?
 
