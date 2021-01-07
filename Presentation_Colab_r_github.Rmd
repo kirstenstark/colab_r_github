@@ -199,7 +199,43 @@ include_graphics("figures/rmarkdown.png")
 
 ## 2. Dynamic document generation: RMarkdown - How?
 
-- Type to console: `install.packages("rmarkdown")`
+- Installation: `install.packages("rmarkdown")`
+
+## 2. Dynamic document generation: RMarkdown - How?
+
+- Installation: `install.packages("rmarkdown")`
+- Open a markdown file: File > New File > R Markdown
+
+
+```{r out.extra='style="float:left"', out.width = '35%'}
+include_graphics("figures/RMarkdown_newfile.png")
+```
+
+
+## 2. Dynamic document generation: RMarkdown - How?
+
+- Installation: `install.packages("rmarkdown")`
+- Open a markdown file: File > New File > R Markdown
+
+```{r out.extra='style="float:left; padding:10px"', out.width = '35%'}
+include_graphics("figures/RMarkdown_newfile.png")
+```
+```{r out.extra='style="float:right; padding:10px"', out.width = '55%'}
+include_graphics("figures/RMarkdown_fileformat.png")
+```
+
+## {data-background="figures/RMarkdown_file_plain.png"}
+## {data-background="figures/RMarkdown_file_header.png"}
+## {data-background="figures/RMarkdown_file_text.png"}
+## {data-background="figures/RMarkdown_file_Rcode.png"}
+## {data-background="figures/RMarkdown_file_knit.png"}
+## {data-background="figures/RMarkdownFile.png"}
+## {data-background="figures/RMarkdown_output.png"}
+## {data-background="figures/RMarkdown_output.png"}
+```{r fig.align = "right", out.width = '35%'}
+include_graphics("figures/RMarkdown_output_files.png")
+```
+
 
 ## 2. Dynamic document generation: RMarkdown - Troubleshooting
 
