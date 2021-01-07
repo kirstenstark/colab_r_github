@@ -198,9 +198,10 @@ include_graphics("figures/ProjectOptions.png")
 ```
 
 
-## 1. Working in different contexts: RStudio Projects – Troubleshooting
+## 1. Working in different contexts: RStudio Projects – Tricks and troubleshooting
 
-- If necessary
+- **Relative paths:** path separator characters vary across systems & anchor points differ depending on contexts
+  + **Use the `here`-package (Müller, 2020) to define relative paths within the project: `read.csv(here::here("data", "file_I_want.csv"))`**
 
 ## 2. Dynamic document generation: RMarkdown - What & Why?
 ```{r out.extra='style="float:right; padding:10px"', out.width = '10%'}
@@ -208,11 +209,11 @@ include_graphics("figures/rmarkdown.png")
 ```
 
 - **What it does:**
-  + Creates dynamic documents with embedded chunks of code (R, python, Julia, stan, ...), computed results , written text etc. (= LaTex) 
+  + Creates dynamic documents with embedded chunks of code (R, python, Julia, stan, ...), computed results , written text etc. (= LaTeX) 
   + Markdown-files can be exported to documents (docx, rtf), presentations, pdfs, websites (html), ... <footnote content="packages"> e.g using the `knitr` (Xie, 2015, 2020) and `tinytex` (Xie, 2015, 2020; for pdfs)</footnote>
   + R code is dynamically rendered, and can be given in separate chunks ('''{r}   ''') or inline (' r  … ')
 - **Why it helps:**
-  + Simple language ($\neq$ LaTex)
+  + Simple language ($\neq$ LaTeX)
   + Integrates directly with statistical software (R Studio)
   + Saves code and output in one file
   + Reduces copy&paste errors: reported results consistent with actual results
@@ -257,22 +258,46 @@ include_graphics("figures/RMarkdown_output_files.png")
 ```
 
 
-## 2. Dynamic document generation: RMarkdown - Troubleshooting
+## 2. Dynamic document generation: RMarkdown - Tricks & troubleshooting
 
-- If necessary
+- You don't have RStudio installed: **install Pandoc (http://pandoc.org)** before installing *markdown* ()
+- Lengthy R code chunks: **Install `knitr`-package (Xie, 2014, 2015, 2020) to customize chunks and knitting process** 
+  + `{r cache=TRUE,message=FALSE,warning=FALSE,results="hide", error = TRUE}`
+  + or use `opts_chunk$set()`-function
+- Knit to pdf: You need a **LaTeX-installation**
+  + **`TinyTeX`** (Xie, 2010) is a light-weight, cross-platform distribution (`install.packages("tinytex"); tinytex::install_tinytex())`)
+  - Separate code chunks by a blank line
+
 
 ## 3. Version control: Git + GitHub - What & Why?
 
-```{r, fig.align='right'}
+```{r, fig.align='center', out.width = '65%'}
 include_graphics("figures/jesus.jpg")
 ```
 
+## 3. Version control: Git + GitHub - What & Why?
+
 - What it does:
-  + ...
-  + ...
+  + Tracks changes to files (data and code) over time: Sequence of "snapshots" (**commits**) wit unique identifiers (hash code) and describition (commit message)
+  + Allows to "go back in time": Recall older versions or to revert the entire project
+  + Changes between commits can be compared
+  + Organized in **repositories**: Collection of all snapshots
+  + **GitHub**: Popular server for sharing materials (*privately or publicly*) and collaborating via git (also: GitLab and others)
+  
+## 3. Version control: Git + GitHub - What & Why?
+
+```{r out.extra='style="float:right; padding:10px"', out.width = '35%'}
+include_graphics("figures/VersionControl.png")
+```
+
 - Why it helps:
-  + ...
-  + ...
+  + Keep things organized and track changes
+  + Clean up code
+  + Language agnostic
+  + (Remote) backup
+  + Work together (even simultaneously and parallely: branches, merges, pull requests)
+  + Web interface to track issues
+  + Easily connected e.g. to osf.io
 
 ## 3. Version control: Git + GitHub – How?
 
@@ -280,7 +305,8 @@ include_graphics("figures/jesus.jpg")
 
 ## 3. Version control: Git + GitHub - Troubleshooting
 
-- If necessary
+- **Github:** No long-term guarantee for availability of service (is commercial) 
+  - **Mirror snapshots on hu servers/osf/zenodo/FigShare/...**
 
 # 4. Package management: renv
 
@@ -339,7 +365,7 @@ include_graphics("figures/renv_init.png")
 - From the Files pane in RStudio, take a look at the `renv.lock` file
 - Install a new package:
 
-```{r, echo=TRUE, results='hide'}
+```{r, echo=TRUE, eval=FALSE}
 install.packages("cowsay")
 ```
 
@@ -428,8 +454,3 @@ include_graphics("figures/binder_co_sing.png")
 ## 6. Where should I start?
 
 - Suggested order of steps, minimal and maximal version
-
-## 7. Start colaborating
-
-- ...
-
