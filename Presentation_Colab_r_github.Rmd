@@ -1,7 +1,7 @@
 ---
 title: "Collaborating on Reproducible Code Using R and GitHub"
 author: "Alexander Enge & Kirsten Stark"
-date: "13/01/2021"
+date: "Colloquium | 13/01/2021"
 output:
   ioslides_presentation:
     widescreen: true
@@ -14,14 +14,6 @@ output:
 library(knitr)
 opts_chunk$set(echo = FALSE)
 ```
-<style>
-div.footnotes {
-  bottom: .01;
-  width: 80%;
-  font-size: 0.55em;
-  margin-left: 120px;
-}
-</style>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script><script>
 $(document).ready(function() {
@@ -61,6 +53,34 @@ slides > slide.dark {
   position: relative;
   top: 100px;
 }
+
+/* Enable footnotes */
+div.footnotes {
+  bottom: .01;
+  width: 80%;
+  font-size: 0.55em;
+  margin-left: 120px;
+}
+```
+
+## Collaborating on Reproducible Code... !?
+
+<div class="columns-2">
+
+<br>
+
+### Collaborating:
+
+You and your collaborator (including your<br>future self) can access the code *and its history*
+
+### Reproducible:
+
+Your code runs and reproduces identical results at different time points and on different systems
+
+</div>
+
+```{r, fig.align='center', out.width='70%'}
+include_graphics("figures/turing.jpg")
 ```
 
 ## Schedule
@@ -71,7 +91,6 @@ slides > slide.dark {
 4. **Package management**: renv
 5. **Containerization**: Docker
 6. **Where should I start?**
-7. **Start collaborating**
 
 ## 0. Kudos
 
@@ -82,8 +101,8 @@ include_graphics("figures/peikert_preprint.png")
 ```
 
 ## 0. Collaborating with yourself and others
-```{r, fig.align='center'}
-#include_graphics("figures/ResearchManagement.png")
+```{r, fig.align='center', out.width='90%'}
+include_graphics("figures/ResearchManagement.png")
 ```
 
 ## 1. Working in different contexts: RStudio Projects - What & Why?
@@ -399,6 +418,12 @@ include_graphics("figures/docker.png")
 - Some additional tools based on Docker:
   + With **binder** (https://mybinder.org) and **Code Ocean** (https://codeocean.com), you can run your analysis in the cloud; they will even create the `Dockerfile` for you if you don't have your own one
   + **Singularity** (https://sylabs.io) is a fully compatible, open source clone of Docker which you can use on systems where you don't have root access (e.g., on high performance clusters)
+
+<br>
+
+```{r, fig.align='center', out.width='80%'}
+include_graphics("figures/binder_co_sing.png")
+```
 
 ## 6. Where should I start?
 
