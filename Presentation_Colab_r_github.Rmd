@@ -95,7 +95,7 @@ include_graphics("figures/schedule_icons.png")
 3. **Version control:** Git + GitHub
 4. **Package management**: renv
 5. **Containerization**: Docker
-6. **Where should I start?**
+6. **Where to start?**
 
 ## 0. Kudos
 
@@ -107,7 +107,7 @@ include_graphics("figures/peikert_preprint.png")
 
 ## 0. Kudos
 
-- Andreas A. Brandmaier: **"A Reproducible Data Analysis Workflow with R Markdown, Git, Make, and Docker"**, talk at the Online Symposium on Reproducing Analyses in Biological Psychology, November 2020 (https://www.youtube.com/watch?v=nTVcMDVlyOI)
+- Andreas Brandmaier: **"A Reproducible Data Analysis Workflow with R Markdown, Git, Make, and Docker"**, talk at the Online Symposium on Reproducing Analyses in Biological Psychology, November 2020 (https://www.youtube.com/watch?v=nTVcMDVlyOI)
 - Richard McElreath: **"Science as Amateur Software Development"**, talk at the Max Planck IT Community, August 2020 (https://www.youtube.com/watch?v=zwRdO9_GGhY)
 - Russ Poldrack: **"Toward a Culture of Computational Reproducibility"**, talk at the Foundations of Biomedical Data Science, December 2020 (https://www.youtube.com/watch?v=XjW3t-qXAiE)
 
@@ -493,15 +493,25 @@ RUN R -e "renv::restore(prompt = FALSE)"
 include_graphics("figures/binder_co_sing.png")
 ```
 
-# 6. Where should I start?
+# 6. Where to start?
 
 ```{r fig.align='right', out.width='60%'}
 include_graphics("figures/where2start.jpeg")
 ```
 
-## 6. Where should I start?
+## 6. Where to start?
 
-- Suggested order of steps, minimal and maximal version
+- **This wealth of tools can seem overwhelming**
+  + Adopting even one or two of them can help making your code more reproducbile
+- An **RStudio project** and **renv** are easy to set up even for existing projects
+  + And will help a lot to make sure that you can still run your code at re-submission
+- **Version control** is best tried out with a new (real or toybox) project
+  + Create an empty repository on GitHub and use it to create your RStudio project
+- Once you've made it this far, full computational reproduciblity (by **containerizing** your project) is just one more step away
+
+```{r fig.align='right', out.width='20%'}
+include_graphics("figures/great_code.jpg")
+```
 
 # Thank you.
 
