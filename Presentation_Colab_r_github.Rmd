@@ -505,5 +505,7 @@ include_graphics("figures/where2start.jpeg")
 
 # Thank you.
 
-
+```{r fig.align='right', out.width='80%'}
+include_graphics("figures/castle.png")
+```
 
