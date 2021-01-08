@@ -15,7 +15,8 @@ library(knitr)
 opts_chunk$set(echo = FALSE)
 ```
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script><script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>
 $(document).ready(function() {
   $('slide:not(.backdrop):not(.title-slide)').append('<div class=\"footnotes\">');
   $('footnote').each(function(index) {
@@ -71,11 +72,11 @@ div.footnotes {
 
 ### Collaborating:
 
-You and your collaborator (including your<br>future self) can access the code *and its history*
+You and your collaborators (including your<br>future self) can access the code *and its history*
 
 ### Reproducible:
 
-Your code runs and reproduces identical results at different time points and on different systems
+Your code runs and reproduces identical results<br>*at different time points* and *on different systems*
 
 </div>
 
@@ -98,10 +99,22 @@ include_graphics("figures/schedule_icons.png")
 
 ## 0. Kudos
 
-- Peikert, A., & Brandmaier, A. M. (2020). A Reproducible Data Analysis Workflow with R Markdown, Git, Make, and Docker. https://doi.org/10.31234/osf.io/8xzqy
+- Peikert, A., & Brandmaier, A. M. (2020). **A Reproducible Data Analysis Workflow with R Markdown, Git, Make, and Docker.** https://doi.org/10.31234/osf.io/8xzqy
 
-```{r out.width='75%', fig.align='center'}
+```{r out.width='100%', fig.align='center'}
 include_graphics("figures/peikert_preprint.png")
+```
+
+## 0. Kudos
+
+- Andreas A. Brandmaier: **"A Reproducible Data Analysis Workflow with R Markdown, Git, Make, and Docker"**, talk at the Online Symposium on Reproducing Analyses in Biological Psychology, November 2020 (https://www.youtube.com/watch?v=nTVcMDVlyOI)
+- Richard McElreath: **"Science as Amateur Software Development"**, talk at the Max Planck IT Community, August 2020 (https://www.youtube.com/watch?v=zwRdO9_GGhY)
+- Russ Poldrack: **"Toward a Culture of Computational Reproducibility"**, talk at the Foundations of Biomedical Data Science, December 2020 (https://www.youtube.com/watch?v=XjW3t-qXAiE)
+
+<br>
+
+```{r out.width='100%', fig.align='center'}
+include_graphics("figures/kudos_talks.png")
 ```
 
 ## 0. Collaborating with yourself and others
@@ -351,11 +364,10 @@ include_graphics("figures/renv.png")
 include_graphics("figures/renv.png")
 ```
 
-- Install renv just like any other R package via `install.packages(renv)`
-- Initialize your project library via `renv::init()`
-- Instead, you can also select "Use renv with this project" during project creation
-- After successfully installing or updating packages, use `renv::snapshot()`
-- If you want to revert to previous state (e.g., if an update caused problems), use `renv::restore()`
+1. Install renv just like any other R package via `install.packages(renv)`
+2. Initialize your project library via `renv::init()`<br>(Instead, you can also select "Use renv with this project" during project creation)
+3. After successfully installing or updating packages, use `renv::snapshot()`
+4. If you want to revert to previous state (e.g., if an update caused problems), use `renv::restore()`
 
 ## 4. renv – How?
 
@@ -373,7 +385,7 @@ include_graphics("figures/renv_init.png")
 install.packages("cowsay")
 ```
 
-- Acutally use the package in one of your scripts:
+- Acutally use the package in one of your scripts (or `.Rmd` files):
 
 ```{r, echo=TRUE, results='hide'}
 cowsay::say("Hello world", "cow")
@@ -396,7 +408,7 @@ Restoring someone else's package versions:
 
 ## 4. renv – Troubleshooting
 
-- There might be some (inconsequential) warnings when switching between Mac and Windows
+- There may be some (inconsequential) warnings when switching between Mac and Windows
 - At least on Windows, you need to have Rtools installed when installing packages that are not on CRAN (https://cran.r-project.org/bin/windows/Rtools/)
 - Installing and loading packages may take a while, especially if your project lives on a network drive<br>(such as `N:/`)
 
@@ -416,8 +428,10 @@ include_graphics("figures/containers.jpg")
 <br>
 
 - Why it helps:
-  + Ensures long-term reproducibility regardless
-  + Prevents differences between operating systems, base R versions, languages etc.
+  + Prevents differences between operating systems, R versions, region and language settings etc.
+  + Ensures long-term reproducibility
+  + Provides a starting point for cloud-based and high perfomance computing (HPC)
+  + Pre-packaged Docker images are available for lots of different languages (R, Python, MATLAB, LaTeX etc.)
 
 ```{r out.extra='style="float:right; padding:10px"', out.width = '10%'}
 include_graphics("figures/docker.png")
@@ -426,7 +440,7 @@ include_graphics("figures/docker.png")
 ## 5. Docker – How?
 
 - Install Docker from https://docs.docker.com/installation/
-- From the terminal, start a container and mount your local project folder:
+- From the terminal, start a R/RStudio container and mount your local project folder:
 
 ```{bash, echo=TRUE, eval=FALSE}
 docker run -d  -e PASSWORD=1234 -p 8787:8787 -v /path/to/your/project:/home/rstudio/ rocker/rstudio
@@ -434,16 +448,40 @@ docker run -d  -e PASSWORD=1234 -p 8787:8787 -v /path/to/your/project:/home/rstu
 
 - You can then access RStudio (running in the container) by opening http://localhost:8787 in your web browser (username: rstudio, password: 1234)
 - You can also build your own container by:
-  + Choosing a base image from https://hub.docker.com/u/rocker (e.g., one including the tidyverse or LaTeX)
+  + Choosing a base image from https://hub.docker.com/u/rocker (including the tidyverse, LaTeX etc.)
   + Creating a `Dockerfile` in your project directy, specyfing additional steps to execute when building the container, e.g., `install.packages("renv"); renv::restore()`
   
 ```{r out.extra='style="float:right; padding:10px"', out.width = '10%'}
 include_graphics("figures/docker.png")
 ```
 
-- For detailled instructions, see Peikert & Brandmaier (2020)
+- For detailled instructions, see [Boettiger & Eddeulbuettel (2017)](https://journal.r-project.org/archive/2017/RJ-2017-065/index.html) and<br>[Peikert & Brandmaier (2020)](https://psyarxiv.com/8xzqy/)
 
 ## 5. Docker – How?
+
+- Example for a Dockerfile:
+
+```{bash, echo=TRUE, eval=FALSE}
+# This as a text file stored with the name "Dockerfile" in your project directory.
+
+# Base image from Docker Hub, including R, RStudio, the tidyverse, and LaTeX
+FROM rocker/verse:4.0.2
+
+# Set working directory within the container
+WORDIR /home/rstudio
+
+# Install renv
+RUN R -e "remotes::install_version('renv', version = '0.12.0', repos = 'http://cran.us.r-project.org')"
+
+# Copy the lock file
+COPY renv.lock renv.lock
+
+# Install package versions stored in the lockfile
+RUN R -e "renv::consent(provided = TRUE)"
+RUN R -e "renv::restore(prompt = FALSE)"
+```
+
+## 5. Docker – Beyond Docker
 
 - Some additional tools based on Docker:
   + With **binder** (https://mybinder.org) and **Code Ocean** (https://codeocean.com), you can run your analysis in the cloud; they will even create the `Dockerfile` for you if you don't have your own one
@@ -455,6 +493,17 @@ include_graphics("figures/docker.png")
 include_graphics("figures/binder_co_sing.png")
 ```
 
+# 6. Where should I start?
+
+```{r fig.align='right', out.width='60%'}
+include_graphics("figures/where2start.jpeg")
+```
+
 ## 6. Where should I start?
 
 - Suggested order of steps, minimal and maximal version
+
+# Thank you.
+
+
+
