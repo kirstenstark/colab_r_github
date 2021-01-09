@@ -196,18 +196,19 @@ include_graphics("figures/rmarkdown.png")
 - **Why it helps:**
   + Simple language ($\neq$ LaTeX)
   + Integrates directly with statistical software (R Studio)
-  + Saves code and output in one file
+  + Saves code AND output in one file
   + Reduces copy&paste errors: reported results consistent with actual results
 
 ## 2. Dynamic document generation: RMarkdown - How?
 
-- Installation: `install.packages("rmarkdown")`
+- Installation: `install.packages("rmarkdown")` (Allaire et al., 2017)
+- Install 'knitr' package for easy access: `install.packages("knitr")` (Xie 2015, 2020)
 
 ## 2. Dynamic document generation: RMarkdown - How?
 
-- Installation: `install.packages("rmarkdown")`
-- Open a markdown file: File > New File > R Markdown
-
+- Installation: `install.packages("rmarkdown")`  (Allaire et al., 2017)
+- Install 'knitr' package for easy access: `install.packages("knitr")` (Xie 2015, 2020)
+- Open a markdown file (.Rmd): File > New File > R Markdown
 
 ```{r out.extra='style="float:left"', out.width = '35%'}
 include_graphics("figures/RMarkdown_newfile.png")
@@ -248,7 +249,14 @@ include_graphics("figures/RMarkdown_output_files.png")
   + or use `opts_chunk$set()`-function
 - Knit to pdf: You need a **LaTeX-installation**
   + **`TinyTeX`** (Xie, 2010) is a light-weight, cross-platform distribution (`install.packages("tinytex"); tinytex::install_tinytex())`)
-  - Separate code chunks by a blank line
+  + Separate code chunks by a blank line
+- Knit older .R code files: Put **#'** in front of any top-level prose, including the header, or use: 
+```{r echo = TRUE, eval=FALSE}
+#/*
+rmarkdown::render(input = rstudioapi::getSourceEditorContext()$path,
+                  output_format = rmarkdown::github_document()),
+                  knit_root_dir = getwd()) #*/
+```
 
 
 ## 3. Version control: Git + GitHub - What & Why?
@@ -260,11 +268,11 @@ include_graphics("figures/jesus.jpg")
 ## 3. Version control: Git + GitHub - What & Why?
 
 - What it does:
-  + Tracks changes to files (data and code) over time: Sequence of "snapshots" (**commits**) wit unique identifiers (hash code) and describition (commit message)
+  + Tracks changes to files (data and code) over time: Sequence of "snapshots" (**commits**)
   + Allows to "go back in time": Recall older versions or to revert the entire project
   + Changes between commits can be compared
   + Organized in **repositories**: Collection of all snapshots
-  + **GitHub**: Popular server for sharing materials (*privately or publicly*) and collaborating via git (also: GitLab and others)
+  + **GitHub**: Popular server for sharing materials (**privately or publicly**) and collaborating via git (also: GitLab and others)
   
 ## 3. Version control: Git + GitHub - What & Why?
 
@@ -277,20 +285,88 @@ include_graphics("figures/VersionControl.png")
   + Clean up code
   + Language agnostic
   + (Remote) backup
-  + Work together (even simultaneously and parallely: branches, merges, pull requests)
-  + Web interface to track issues
+  + Work together, with collaborators (even simultaneously and parallel: branches, merges, pull requests) - and your future self
+  + Web interface for your project and to track issues
   + Easily connected e.g. to osf.io
 
-## 3. Version control: Git + GitHub – How?
+## 3. Version control: Git + GitHub – Installation
 
-- ...
+- Register an account with GitHub: <https://github.com/>
+- (Update R, RStudio, and your packages: `update.packages(ask = FALSE, checkBuilt = TRUE)`)
+- **Is Git installed?** Open your shell ("Terminal" in RStudio or on Mac, "Eingabeaufforderung" on Windows), and type: `git --version`. If "`git: command not found`": 
+- **Install Git - Mac**: Mac offers to install developer command line developer tools automatically. Click "Install". If you don't get the offer, type: `xcode-select --install`. Restart R.
+- **Install Git - Windows**: Install "Git Bash" (<https://gitforwindows.org>). Accept default settings. When asked about "Adjusting your PATH environment", select "Git from the command line and also from 3-rd party software". Restart R.
+- Configure Git: In the (Git Bash) shell, type
+  + `git config --global user.name 'your name'`
+  + `git config --global user.email 'email associated with your GitHub account'`
+  + `git config --global --list` (Check whether everything worked)
+- *Optional:* Install a Git client. Find more info e.g. here: <https://happygitwithr.com/git-client.html> 
 
-## 3. Version control: Git + GitHub - Troubleshooting
 
-- **Github:** No long-term guarantee for availability of service (is commercial) 
-  - **Mirror snapshots on hu servers/osf/zenodo/FigShare/...**
+## 3. Version control: Git + GitHub – Vocabulary
 
-# 4. Package management: renv
+- Vocabulary - *Git*: 
+  + **Repo(sitory)**: Directory of files that Git manages holistically
+  + **Commit**: Snapshot of all files in the repository, at a specific moment, each with a unique identifier (**hash code** or SHA) and description (**commit message**)
+  + **Diff**: Set of differences between (any) two commits
+  + **Tag**: Specific name for a certain snapshot (optional), e.g. "v1.0.3", "preprint", "submitted"
+
+```{r fig.align = 'center', out.width = '50%'}
+include_graphics("figures/commit_history.png")
+```
+
+## 3. Version control: Git + GitHub – Vocabulary
+
+- Vocabulary - *Git*: 
+  + **Repo(sitory)**: Directory of files that Git manages holistically
+  + **Commit**: Snapshot of all files in the repository, at a specific moment, each with a unique identifier (**hash code** or SHA) and description (**commit message**)
+  + **Diff**: Set of differences between (any) two commits
+  + **Tag**: Specific name for a certain snapshot (optional), e.g. "v1.0.3", "preprint", "submitted"
+- Vocabulary - *GitHub*
+  + **Push**: Send your local Git commits to GitHub
+  + **Pull**: Compare and update your local Git with GitHub
+  + **Merge conflict**: Git can't be certain how to jointly apply diffs from two commits to their common parent. Resolve by picking manually, avoid by pushing often.
+
+```{r fig.align = 'center', out.width = '38%'}
+include_graphics("figures/GitHub_Push_and_pull.png")
+```
+
+## 3. Version control: Git + GitHub – Code along
+
+```{r out.extra='style="float:right; padding:10px"', out.width = '70%'}
+include_graphics("figures/GitHub_create_repo.png")
+```
+
+- Go to <https://github.com/> and log in
+- Click "New repository"
+  + Decide between "private" or "public". Initialize with a README. Accept default for everything else.
+  + Click "Create repository"
+  + Copy the HTTPS
+
+## 3. Version control: Git + GitHub – Code along
+
+- **Clone your GitHub repo to your computer**: Type `git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY.git` (your link) in the shell (Terminal in RStudio or on Mac, Git Bash on Windows)
+  + Make this repo your working directory (`cd YOUR-REPOSITORY`), list its files (`ls`), display README (`head README.md`), get info on its connection to GitHub (`git remote show origin`)
+  + **Make a local change**: Add a new line to README, and verify change is noticed: 
+```{r echo = TRUE, eval=FALSE}
+echo "This is the first change to my repo" >> README.md
+git status
+```
+  + **Stage (`add`), commit (`commit - m "YOUR-COMMIT-MESSAGE`), and `push` change.** You may be asked for your username and password. 
+```{r echo = TRUE, eval=FALSE}
+git add -A
+git commit -m "A commit from my local computer"
+git push
+```
+    - (Clean up: Delete your local repo (`cd`, and then `rm -rf YOUR-REPO-NAME/`))
+  
+## 3. Version control: Git + GitHub - Tricks & Troubleshooting
+
+- **GitHub:** No long-term guarantee for availability of service (is commercial) 
+  + **Mirror snapshots on hu servers/osf/zenodo/FigShare/...**
+- GitHub: .md-files will be displayed like HTML, CSV will have a nice layout, README.md-files act like the landing page. Use internal link to other files.
+
+## 4. Package management: renv
 
 ```{r out.width='55%', fig.align='right'}
 # # This was used to create the plot. To run this code, please install pkggraph and ggplot2.
