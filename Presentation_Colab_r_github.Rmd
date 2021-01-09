@@ -391,6 +391,15 @@ git commit -m "A commit from my local computer"
 git push
 ```
     - (Clean up: Delete your local repo (`cd`, and then `rm -rf YOUR-REPO-NAME/`))
+    
+## 3. Version control: Git + GitHub – Code along
+
+- Clone your repository to RStudio
+  + File > New Project > Select "Version Control" > Select "Git" > Enter your repository URL: `https://github.com/YOUR-USERNAME/YOUR-REPOSITORY.git`
+  
+```{r out.extra='style="float:right; padding:10px"', out.width = '70%'}
+include_graphics("figures/GitHubToR.png")
+```
   
 ## 3. Version control: Git + GitHub - Tricks & Troubleshooting
 
@@ -458,7 +467,7 @@ include_graphics("figures/renv_init.png")
 install.packages("cowsay")
 ```
 
-- Acutally use the package in one of your scripts (or `.Rmd` files):
+- Actually use the package in one of your scripts (or `.Rmd` files):
 
 ```{r, echo=TRUE, results='hide'}
 cowsay::say("Hello world", "cow")
