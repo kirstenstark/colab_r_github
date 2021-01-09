@@ -400,7 +400,13 @@ git push
 ```{r out.extra='style="float:right; padding:10px"', out.width = '70%'}
 include_graphics("figures/GitHubToR.png")
 ```
-  
+
+## 3. Version control: Git + GitHub – Code along
+
+## {data-background="figures/RStudioGit.png"}
+
+
+
 ## 3. Version control: Git + GitHub - Tricks & Troubleshooting
 
 - **GitHub:** No long-term guarantee for availability of service (is commercial) 
