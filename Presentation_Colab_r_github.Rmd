@@ -401,10 +401,12 @@ git push
 include_graphics("figures/GitHubToR.png")
 ```
 
-## 3. Version control: Git + GitHub – Code along
-
 ## {data-background="figures/RStudioGit.png"}
-
+## {data-background="figures/UseGit_in_R.png"}
+## {data-background="figures/GitR_select_for_commit.png"}
+## {data-background="figures/GitHubR_commitmessage.png"}
+## {data-background="figures/GitHubR_commit.png"}
+## {data-background="figures/GitHubR_push.png"}
 
 
 ## 3. Version control: Git + GitHub - Tricks & Troubleshooting
