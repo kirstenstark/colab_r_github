@@ -78,6 +78,7 @@ You and your collaborators (including your<br>future self) can access the code *
 
 Your code runs and reproduces identical results<br>*at different time points* and *on different systems*
 
+</div>
 
 ```{r fig.align='center', out.width='70%'}
 include_graphics("figures/turing.jpg")
@@ -298,7 +299,7 @@ include_graphics("figures/jesus.jpg")
 
 ## 3. Version control: Git + GitHub - What & Why?
 
-- What it does:
+- **What it does:**
   + Tracks changes to files (data and code) over time: Sequence of "snapshots" (**commits**)
   + Allows to "go back in time": Recall older versions or to revert the entire project
   + Changes between commits can be compared
@@ -311,7 +312,7 @@ include_graphics("figures/jesus.jpg")
 include_graphics("figures/VersionControl.png")
 ```
 
-- Why it helps:
+- **Why it helps:**
   + Keep things organized and track changes
   + Clean up code
   + Language agnostic
@@ -397,7 +398,7 @@ git push
   + **Mirror snapshots on hu servers/osf/zenodo/FigShare/...**
 - GitHub: .md-files will be displayed like HTML, CSV will have a nice layout, README.md-files act like the landing page. Use internal link to other files.
 
-## 4. Package management: renv
+# 4. Package management: renv
 
 ```{r out.width='55%', fig.align='right'}
 # # This was used to create the plot. To run this code, please install pkggraph and ggplot2.
@@ -418,14 +419,14 @@ include_graphics("figures/lmerTest_depends.png")
 include_graphics("figures/renv.png")
 ```
 
-- What it does:
+- **What it does:**
   + Creates a project-specific library of packages in the project folder
   + Overwrites `install.packages()` to install packages in this local library
   + Keeps track of package versions in the `renv.lock` file
 
 <br>
 
-- Why it helps:
+- **Why it helps:**
   + Keeps package versions untouched by other projects
   + Allows you to revert to the previous state when an update has broken your analysis
   + Makes it easier to share package versions with your collaborators (e.g., via GitHub)
@@ -492,18 +493,18 @@ include_graphics("figures/containers.jpg")
 
 ## 5. Docker – What & Why?
 
-- What it does:
+- **What it does:**
   + Creates a small, linux-based virtual machine on your computer
   + Makes it possible to run your scripts (or render your `.Rmd` files) on this virtual system
   + The recipe to build this system is stored in a `Dockerfile` that can be shared via GitHub
 
 <br>
 
-- Why it helps:
+- **Why it helps:**
   + Prevents differences between operating systems, R versions, region and language settings etc.
   + Ensures long-term reproducibility
   + Provides a starting point for cloud-based and high perfomance computing (HPC)
-  + Pre-packaged Docker images are available for lots of different languages (R, Python, MATLAB, LaTeX etc.)
+  + Pre-packaged Docker images are available for different languages (R, Python, MATLAB, LaTeX etc.)
 
 ```{r out.extra='style="float:right; padding:10px"', out.width = '10%'}
 include_graphics("figures/docker.png")
