@@ -76,7 +76,7 @@ You and your collaborators (including your<br>future self) can access the code *
 
 ### Reproducible:
 
-Your code runs and reproduces identical results<br>*at different time points* and *on different systems*
+Your code runs and produces identical results<br>*at different time points* and *on different systems*
 
 </div>
 
@@ -99,7 +99,7 @@ include_graphics("figures/schedule_icons.png")
 
 ## 0. Kudos
 
-- Peikert, A., & Brandmaier, A. M. (2020). **A Reproducible Data Analysis Workflow with R Markdown, Git, Make, and Docker.** https://doi.org/10.31234/osf.io/8xzqy
+- Peikert, A., & Brandmaier, A. M. (2020). **A Reproducible Data Analysis Workflow with R Markdown, Git, Make, and Docker.** *PsyArXiv Preprints.* https://doi.org/10.31234/osf.io/8xzqy
 
 ```{r out.width='100%', fig.align='center'}
 include_graphics("figures/peikert_preprint.png")
@@ -117,8 +117,12 @@ include_graphics("figures/peikert_preprint.png")
 include_graphics("figures/kudos_talks.png")
 ```
 
+# 1. Working in different contexts: RStudio Projects
+
+Needs a cool image :)
 
 ## 1. Working in different contexts: RStudio Projects - What & Why?
+
 ```{r out.extra='style="float:right; padding:10px"', out.width = '10%'}
 include_graphics("figures/RStudioProject.png")
 ```
@@ -141,6 +145,7 @@ include_graphics("figures/RStudioProject.png")
 ```{r out.extra='style="float:left; padding:10px"', out.width = '40%'}
 include_graphics("figures/NewProject.png")
 ```
+
 ```{r out.extra='style="float:right; padding:10px"', out.width = '50%'}
 include_graphics("figures/CreateProject.png")
 ```
@@ -150,6 +155,7 @@ include_graphics("figures/CreateProject.png")
 ```{r out.extra='style="float:left; padding:10px"', out.width = '35%'}
 include_graphics("figures/CreateProject.png")
 ```
+
 ```{r out.extra='style="float:right; padding:10px"', out.width = '55%'}
 include_graphics("figures/CreateNewProject.png")
 ```
@@ -159,6 +165,7 @@ include_graphics("figures/CreateNewProject.png")
 ```{r out.extra='style="float:left; padding:10px"', out.width = '35%'}
 include_graphics("figures/CreateNewProject.png")
 ```
+
 ```{r out.extra='style="float:right; padding:10px"', out.width = '55%'}
 include_graphics("figures/CreateNewProjectType.png")
 ```
@@ -174,6 +181,7 @@ include_graphics("figures/RProjectSleepstudy.png")
 ```{r out.extra='style="float:left; padding:10px"', out.width = '35%'}
 include_graphics("figures/CreateProject.png")
 ```
+
 ```{r out.extra='style="float:right; padding:10px"', out.width = '55%'}
 include_graphics("figures/CreateProjectFromExistingDirectory.png")
 ```
@@ -183,6 +191,7 @@ include_graphics("figures/CreateProjectFromExistingDirectory.png")
 ```{r out.extra='style="float:left; padding:10px"', out.width = '35%'}
 include_graphics("figures/CreateProject.png")
 ```
+
 ```{r out.extra='style="float:right; padding:10px"', out.width = '55%'}
 include_graphics("figures/CreateProjectFromVersionControl.png")
 ```
@@ -192,6 +201,7 @@ include_graphics("figures/CreateProjectFromVersionControl.png")
 ```{r out.extra='style="float:left; padding:10px"', out.width = '35%'}
 include_graphics("figures/CreateProjectFromVersionControl.png")
 ```
+
 ```{r out.extra='style="float:right; padding:10px"', out.width = '55%'}
 include_graphics("figures/CloneGitRepository.png")
 ```
@@ -201,35 +211,41 @@ include_graphics("figures/CloneGitRepository.png")
 ```{r out.extra='style="float:left; padding:10px"', out.width = '25%'}
 include_graphics("figures/OpenProject.png")
 ```
+
 ```{r out.extra='style="float:left; padding:10px"', out.width = '70%'}
 include_graphics("figures/ChooseProject.png")
 ```
 
 ## 1. Working in different contexts: RStudio Projects – Open and manage projects
+
 ```{r, fig.align='center', out.width = '55%'}
 include_graphics("figures/ProjectOptions.png")
 ```
-
 
 ## 1. Working in different contexts: RStudio Projects – Tricks and troubleshooting
 
 - **Relative paths:** path separator characters vary across systems & anchor points differ depending on contexts
   + **Use the `here`-package (Müller, 2020) to define relative paths within the project: `read.csv(here::here("data", "file_I_want.csv"))`**
 
+# 2. Dynamic document generation: RMarkdown
+
+Also needs a cool image :)
+
 ## 2. Dynamic document generation: RMarkdown - What & Why?
+
 ```{r out.extra='style="float:right; padding:10px"', out.width = '10%'}
 include_graphics("figures/rmarkdown.png")
 ```
 
 - **What it does:**
-  + Creates dynamic documents with embedded chunks of code (R, python, Julia, stan, ...), computed results , written text etc. (= LaTeX) 
+  + Creates dynamic documents with embedded chunks of code (R, Python, Julia, Stan, ...), computed results , written text etc. (= LaTeX) 
   + Markdown-files can be exported to documents (docx, rtf), presentations, pdfs, websites (html), ... <footnote content="packages"> e.g using the `knitr` (Xie, 2015, 2020) and `tinytex` (Xie, 2015, 2020; for pdfs)</footnote>
   + R code is dynamically rendered, and can be given in separate chunks ('''{r}   ''') or inline (' r  … ')
 - **Why it helps:**
   + Simple language ($\neq$ LaTeX)
-  + Integrates directly with statistical software (R Studio)
+  + Integrates directly with statistical software (RStudio)
   + Saves code AND output in one file
-  + Reduces copy&paste errors: reported results consistent with actual results
+  + Reduces copy & paste errors: reported results consistent with actual results
 
 ## 2. Dynamic document generation: RMarkdown - How?
 
@@ -245,7 +261,6 @@ include_graphics("figures/rmarkdown.png")
 ```{r out.extra='style="float:left"', out.width = '35%'}
 include_graphics("figures/RMarkdown_newfile.png")
 ```
-
 
 ## 2. Dynamic document generation: RMarkdown - How?
 
@@ -272,7 +287,6 @@ include_graphics("figures/RMarkdown_fileformat.png")
 include_graphics("figures/RMarkdown_output_files.png")
 ```
 
-
 ## 2. Dynamic document generation: RMarkdown - Tricks & troubleshooting
 
 - You don't have RStudio installed: **install Pandoc (http://pandoc.org)** before installing *markdown* ()
@@ -283,6 +297,7 @@ include_graphics("figures/RMarkdown_output_files.png")
   + **`TinyTeX`** (Xie, 2010) is a light-weight, cross-platform distribution (`install.packages("tinytex"); tinytex::install_tinytex())`)
   + Separate code chunks by a blank line
 - Knit older .R code files: Put **#'** in front of any top-level prose, including the header, or use: 
+
 ```{r echo = TRUE, eval=FALSE}
 #/*
 rmarkdown::render(input = rstudioapi::getSourceEditorContext()$path,
@@ -290,10 +305,9 @@ rmarkdown::render(input = rstudioapi::getSourceEditorContext()$path,
                   knit_root_dir = getwd()) #*/
 ```
 
+# 3. Version control: Git + GitHub
 
-## 3. Version control: Git + GitHub - What & Why?
-
-```{r, fig.align='center', out.width = '65%'}
+```{r, fig.align='right', out.width = '50%'}
 include_graphics("figures/jesus.jpg")
 ```
 
@@ -301,7 +315,7 @@ include_graphics("figures/jesus.jpg")
 
 - **What it does:**
   + Tracks changes to files (data and code) over time: Sequence of "snapshots" (**commits**)
-  + Allows to "go back in time": Recall older versions or to revert the entire project
+  + Allows to "go back in time": Recall older versions or revert the entire project
   + Changes between commits can be compared
   + Organized in **repositories**: Collection of all snapshots
   + **GitHub**: Popular server for sharing materials (**privately or publicly**) and collaborating via git (also: GitLab and others)
@@ -380,16 +394,20 @@ include_graphics("figures/GitHub_create_repo.png")
 - **Clone your GitHub repo to your computer**: Type `git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY.git` (your link) in the shell (Terminal in RStudio or on Mac, Git Bash on Windows)
   + Make this repo your working directory (`cd YOUR-REPOSITORY`), list its files (`ls`), display README (`head README.md`), get info on its connection to GitHub (`git remote show origin`)
   + **Make a local change**: Add a new line to README, and verify change is noticed: 
+
 ```{r echo = TRUE, eval=FALSE}
 echo "This is the first change to my repo" >> README.md
 git status
 ```
-  + **Stage (`add`), commit (`commit - m "YOUR-COMMIT-MESSAGE`), and `push` change.** You may be asked for your username and password. 
+
+  + **Stage (`add`), commit (`commit - m "YOUR-COMMIT-MESSAGE"`), and `push` change.** You may be asked for your username and password.
+
 ```{r echo = TRUE, eval=FALSE}
 git add -A
 git commit -m "A commit from my local computer"
 git push
 ```
+
     - (Clean up: Delete your local repo (`cd`, and then `rm -rf YOUR-REPO-NAME/`))
     
 ## 3. Version control: Git + GitHub – Code along
@@ -408,11 +426,10 @@ include_graphics("figures/GitHubToR.png")
 ## {data-background="figures/GitHubR_commit.png"}
 ## {data-background="figures/GitHubR_push.png"}
 
-
 ## 3. Version control: Git + GitHub - Tricks & Troubleshooting
 
 - **GitHub:** No long-term guarantee for availability of service (is commercial) 
-  + **Mirror snapshots on hu servers/osf/zenodo/FigShare/...**
+  + **Mirror snapshots on HU servers/OSF/Zenodo/FigShare/...**
 - GitHub: .md-files will be displayed like HTML, CSV will have a nice layout, README.md-files act like the landing page. Use internal link to other files.
 
 # 4. Package management: renv
@@ -447,6 +464,7 @@ include_graphics("figures/renv.png")
   + Keeps package versions untouched by other projects
   + Allows you to revert to the previous state when an update has broken your analysis
   + Makes it easier to share package versions with your collaborators (e.g., via GitHub)
+  + Can also keep track of Python packages
 
 ## 4. renv – How?
 
@@ -468,7 +486,7 @@ include_graphics("figures/renv_init.png")
 ## 4. renv – Code along
 
 - Initialize renv for your sleepstudy project using `renv::init()`
-- From the Files pane in RStudio, take a look at the `renv.lock` file
+- From the "Files" pane in RStudio, take a look at the `renv.lock` file
 - Install a new package:
 
 ```{r, echo=TRUE, eval=FALSE}
