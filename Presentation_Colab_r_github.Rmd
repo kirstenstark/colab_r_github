@@ -219,7 +219,9 @@ include_graphics("figures/ProjectOptions.png")
 
 # 2. Dynamic document generation: RMarkdown
 
-Also needs a cool image :)
+```{r, fig.align='right', out.width = '50%'}
+include_graphics("figures/rmarkdown_figure.png")
+```
 
 ## 2. RMarkdown - What & Why?
 
