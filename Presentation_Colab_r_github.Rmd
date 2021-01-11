@@ -121,7 +121,7 @@ include_graphics("figures/kudos_talks.png")
 
 Needs a cool image :)
 
-## 1. Working in different contexts: RStudio Projects - What & Why?
+## 1. RStudio Projects - What & Why?
 
 ```{r out.extra='style="float:right; padding:10px"', out.width = '10%'}
 include_graphics("figures/RStudioProject.png")
@@ -138,7 +138,7 @@ include_graphics("figures/RStudioProject.png")
   + Use only relative paths
   + Necessary basis for version control
 
-## 1. Working in different contexts: RStudio Projects – How?
+## 1. RStudio Projects – How?
 
 - In RStudio: File > New Project > ...
 
@@ -150,7 +150,7 @@ include_graphics("figures/NewProject.png")
 include_graphics("figures/CreateProject.png")
 ```
 
-## 1. Working in different contexts: RStudio Projects – Version 1: Create new project
+## 1. RStudio Projects – Version 1: Create new project
 
 ```{r out.extra='style="float:left; padding:10px"', out.width = '35%'}
 include_graphics("figures/CreateProject.png")
@@ -160,7 +160,7 @@ include_graphics("figures/CreateProject.png")
 include_graphics("figures/CreateNewProject.png")
 ```
 
-## 1. Working in different contexts: RStudio Projects – Version 1: Create new project
+## 1. RStudio Projects – Version 1: Create new project
 
 ```{r out.extra='style="float:left; padding:10px"', out.width = '35%'}
 include_graphics("figures/CreateNewProject.png")
@@ -237,12 +237,12 @@ include_graphics("figures/rmarkdown.png")
   + Saves code AND output in one file
   + Reduces copy & paste errors: reported results consistent with actual results
 
-## 2. Dynamic document generation: RMarkdown - How?
+## 2. RMarkdown - How?
 
 - Installation: `install.packages("rmarkdown")` (Allaire et al., 2017)
 - Install 'knitr' package for easy access: `install.packages("knitr")` (Xie 2015, 2020)
 
-## 2. Dynamic document generation: RMarkdown - How?
+## 2. RMarkdown - How?
 
 - Installation: `install.packages("rmarkdown")`  (Allaire et al., 2017)
 - Install 'knitr' package for easy access: `install.packages("knitr")` (Xie 2015, 2020)
@@ -252,7 +252,7 @@ include_graphics("figures/rmarkdown.png")
 include_graphics("figures/RMarkdown_newfile.png")
 ```
 
-## 2. Dynamic document generation: RMarkdown - How?
+## 2. RMarkdown - How?
 
 - Installation: `install.packages("rmarkdown")`
 - Open a markdown file: File > New File > R Markdown
@@ -277,7 +277,7 @@ include_graphics("figures/RMarkdown_fileformat.png")
 include_graphics("figures/RMarkdown_output_files.png")
 ```
 
-## 2. Dynamic document generation: RMarkdown - Tricks & troubleshooting
+## 2. RMarkdown - Tricks & troubleshooting
 
 - You don't have RStudio installed: **install Pandoc (http://pandoc.org)** before installing *markdown* ()
 - Lengthy R code chunks: **Install `knitr`-package (Xie, 2014, 2015, 2020) to customize chunks and knitting process** 
@@ -301,7 +301,7 @@ rmarkdown::render(input = rstudioapi::getSourceEditorContext()$path,
 include_graphics("figures/jesus.jpg")
 ```
 
-## 3. Version control: Git + GitHub - What & Why?
+## 3. Git + GitHub - What & Why?
 
 - **What it does:**
   + Tracks changes to files (data and code) over time: Sequence of "snapshots" (**commits**)
@@ -310,7 +310,7 @@ include_graphics("figures/jesus.jpg")
   + Organized in **repositories**: Collection of all snapshots
   + **GitHub**: Popular server for sharing materials (**privately or publicly**) and collaborating via git (also: GitLab and others)
   
-## 3. Version control: Git + GitHub - What & Why?
+## 3. Git + GitHub - What & Why?
 
 ```{r out.extra='style="float:right; padding:10px"', out.width = '35%'}
 include_graphics("figures/VersionControl.png")
@@ -325,7 +325,7 @@ include_graphics("figures/VersionControl.png")
   + Web interface for your project and to track issues
   + Easily connected e.g. to osf.io
 
-## 3. Version control: Git + GitHub – Installation
+## 3. Git + GitHub – Installation
 
 - Register an account with GitHub: <https://github.com/>
 - (Update R, RStudio, and your packages: `update.packages(ask = FALSE, checkBuilt = TRUE)`)
@@ -339,7 +339,7 @@ include_graphics("figures/VersionControl.png")
 - *Optional:* Install a Git client. Find more info e.g. here: <https://happygitwithr.com/git-client.html> 
 
 
-## 3. Version control: Git + GitHub – Vocabulary
+## 3. Git + GitHub – Vocabulary
 
 - Vocabulary - *Git*: 
   + **Repo(sitory)**: Directory of files that Git manages holistically
@@ -351,7 +351,7 @@ include_graphics("figures/VersionControl.png")
 include_graphics("figures/commit_history.png")
 ```
 
-## 3. Version control: Git + GitHub – Vocabulary
+## 3. Git + GitHub – Vocabulary
 
 - Vocabulary - *Git*: 
   + **Repo(sitory)**: Directory of files that Git manages holistically
@@ -367,7 +367,7 @@ include_graphics("figures/commit_history.png")
 include_graphics("figures/GitHub_Push_and_pull.png")
 ```
 
-## 3. Version control: Git + GitHub
+## 3. Git + GitHub - How?
 
 ```{r out.extra='style="float:right; padding:10px"', out.width = '70%'}
 include_graphics("figures/GitHub_create_repo.png")
@@ -379,7 +379,7 @@ include_graphics("figures/GitHub_create_repo.png")
   + Click "Create repository"
   + Copy the HTTPS
     
-## 3. Version control: Git + GitHub
+## 3. Git + GitHub - How?
 
 - Clone your repository to RStudio
   + File > New Project > Select "Version Control" > Select "Git" > Enter your repository URL: `https://github.com/YOUR-USERNAME/YOUR-REPOSITORY.git`
@@ -395,7 +395,7 @@ include_graphics("figures/GitHubToR.png")
 ## {data-background="figures/GitHubR_commit.png"}
 ## {data-background="figures/GitHubR_push.png"}
 
-## 3. Version control: Git + GitHub - Tricks & Troubleshooting
+## 3. Git + GitHub - Tricks & Troubleshooting
 
 - **GitHub:** No long-term guarantee for availability of service (is commercial) 
   + **Mirror snapshots on HU servers/OSF/Zenodo/FigShare/...**
