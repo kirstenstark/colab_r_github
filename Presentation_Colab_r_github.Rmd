@@ -655,7 +655,14 @@ include_graphics("figures/code_along.png")
 
 - **Install RMarkdown**: Type to console `install.packages("rmarkdown")` and `install.packages("knitr")`
 - **Create an RMarkdown file**: File > New File > R Markdown... > Select "Document" > Choose a title (e.g. "analyses_sleepstudy") and HTML as default output format. Click "OK".
-- **Make changes to your Markdown file**: Enter a first section title (`# Random number generation`), a text ("Here, we generate 10 random numbers between 0 and 10"), and an r code chunk (`'''{r} numbers <- sample(0:10, 10, replace = FALSE)'''`). 
+- **Make changes to your Markdown file**: Enter a first section title (`# Random number generation`), a text ("Here, we generate 10 random numbers between 0 and 10"), and an r code chunk (Insert > R):
+
+```{r echo=TRUE, eval=FALSE}
+set.seed(1234)
+numbers <- sample(0:10, 10, replace = FALSE)
+print(numbers)
+```
+
 - **Knit your Markdown file**: Knit button
 - **Commit and push your change**: Click on "Commit" > Stage files > Enter commit message > Click on "Commit" > Click on "Push"
 
@@ -674,7 +681,7 @@ include_graphics("figures/code_along.png")
 install.packages("cowsay")
 ```
 
-- renv only keeps track of packages that are actually used in one or more of your scripts. Therefore, create a new code chunk in your RMarkdown file and paste:
+- renv only keeps track of packages that are actually used in one or more of your scripts. Therefore, create a new code chunk in your RMarkdown file (Insert > R) and paste:
 
 ```{r, echo=TRUE, eval=FALSE}
 text <- paste("My favorite numbers are", numbers)
@@ -684,7 +691,7 @@ cowsay::say(text, "cow")
 - Save and/or knit the file.
 - Check the status of your project library by typing to the console: `renv::status()`
 - You'll notice that the cowsay package is not yet added to your lockfile. Do so by typing to the console: `renv::snapshot()`
-- Commit and push your changes to GitHub
+- Commit and push your changes to GitHub. Congrats! You now have a reproducible project.
 
 # Thank you.
 
