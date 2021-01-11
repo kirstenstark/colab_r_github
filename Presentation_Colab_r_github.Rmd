@@ -655,27 +655,35 @@ include_graphics("figures/code_along.png")
 
 - **Install RMarkdown**: Type to console `install.packages("rmarkdown")` and `install.packages("knitr")`
 - **Create an RMarkdown file**: File > New File > R Markdown... > Select "Document" > Choose a title (e.g. "analyses_sleepstudy") and HTML as default output format. Click "OK".
-- **Make changes to your Markdown file**: Enter a first section title (`# Random number generation`), a text ("Here, we generate 10 random numbers between 0 and 10"), and an r code chunk (`'''{r} sample(0:10, 10, replace = FALSE)'''`). 
+- **Make changes to your Markdown file**: Enter a first section title (`# Random number generation`), a text ("Here, we generate 10 random numbers between 0 and 10"), and an r code chunk (`'''{r} numbers <- sample(0:10, 10, replace = FALSE)'''`). 
 - **Knit your Markdown file**: Knit button
 - **Commit and push your change**: Click on "Commit" > Stage files > Enter commit message > Click on "Commit" > Click on "Push"
 
-## 4. renv – Code along
+## Code along: renv
 
-- Initialize renv for your sleepstudy project using `renv::init()`
-- From the "Files" pane in RStudio, take a look at the `renv.lock` file
-- Install a new package:
+- In the "Package" pane, check if you have renv installed
+  + If not: `install.packages("renv")`
+- Initialize your local project library by typing in the console: `renv::init()`
+  + If you want to, take a look at the `renv.lock` from the "Files" pane in RStudio
+
+## Code along: renv
+
+- From the console, install a new package:
 
 ```{r, echo=TRUE, eval=FALSE}
 install.packages("cowsay")
 ```
 
-- Actually use the package in one of your scripts (or `.Rmd` files):
+- renv only keeps track of packages that are actually used in one or more of your scripts. Therefore, create a new code chunk in your RMarkdown file and paste:
 
-```{r, echo=TRUE, results='hide'}
-cowsay::say("Hello world", "cow")
+```{r, echo=TRUE, eval=FALSE}
+text <- paste("My favorite numbers are", numbers)
+cowsay::say(text, "cow")
 ```
 
-- Write this change to the lockfile using `renv::snapshot()`
+- Save and/or knit the file.
+- Check the status of your project library by typing to the console: `renv::status()`
+- You'll notice that the cowsay package is not yet added to your lockfile. Do so by typing to the console: `renv::snapshot()`
 - Commit and push your changes to GitHub
 
 # Thank you.
