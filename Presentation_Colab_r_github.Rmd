@@ -628,11 +628,23 @@ Needs a cool image
 ## Code along: GitHub repository and R project
 
 - **Create a GitHub repository**: Go to <https://github.com/> > Enter your username and password > Click "New" Repository > Settings: Create a private repository (you can make it public later), add a README file, accept default settings for everything else. Click "Create repository" > Copy the URL
-- **Open R Studio**
-- **Create an R project**: File > New Project... > Select Version Control > Select Git > Enter the repository URL (the URL you just copied: <https://github.com/USERNAME/REPOSITORY-NAME), choose a project directory name and where it should be saved. Click "Create Project".
+- **Open R Studio and create an R project**: File > New Project... > Select Version Control > Select Git > Enter the repository URL (the URL you just copied: <https://github.com/USERNAME/REPOSITORY-NAME>), choose a project directory name and where it should be saved. Click "Create Project". 
+    - <span style="color: green; font-size: 1;">(Terminal alternative: 'git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY.git'. Then 'cd YOUR-REPOSITORY')</span> 
+- **Make changes to README file, commit, and push**
+  + **Open your Readme file**: File > Open File...
+  + Make changes to your README ("This is my first GitHub repository") 
+    - <span style="color: green; font-size: 1;">(Terminal alternative: 'echo "YOUR-TEXT" >> README.md')</span>
+  + **Commit**: Open the "Git" tab (next to the Environment) > Push the "Commit" button > *Stage* your change > Enter a *commit message* > Click on "Commit". 
+  + **Push to GitHub**: Click on "Push" 
+    - <span style="color: green; font-size: 1; ">( Terminal alternative: "git add -A'. Then 'git commit -m "COMMIT-MESSAGE"'. Then 'git push')</span>
+
+## Code along: RMarkdown
+
 - **Install RMarkdown**: Type to console `install.packages("rmarkdown")` and `install.packages("knitr")`
-- **Create an R Markdown file**: File > New File > R Markdown... > Select "Document" > Choose a title (e.g. "analyses_sleepstudy") and HTML as default output format. Click "OK".
-- **Make changes to your Markdown file**: Enter a first section title (`#Random number generation), a text ("Here, we generate 10 random numbers between 0 and 10"), and an r code chunk (````{r sample(0:10, 10, replace = FALSE}```` )
+- **Create an RMarkdown file**: File > New File > R Markdown... > Select "Document" > Choose a title (e.g. "analyses_sleepstudy") and HTML as default output format. Click "OK".
+- **Make changes to your Markdown file**: Enter a first section title (`# Random number generation`), a text ("Here, we generate 10 random numbers between 0 and 10"), and an r code chunk (`'''{r} sample(0:10, 10, replace = FALSE)'''`). 
+- **Knit your Markdown file**: Knit button
+- **Commit and push your change**: Click on "Commit" > Stage files > Enter commit message > Click on "Commit" > Click on "Push"
 
 # Thank you.
 
