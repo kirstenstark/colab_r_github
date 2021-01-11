@@ -136,7 +136,7 @@ include_graphics("figures/RStudioProject.png")
   + Keep all the files associated with a project together — data, scripts, results, figures
   + Work on multiple projects at once, each associated with its packages (and package versions), loaded data, etc. 
   + Use only relative paths
-  + Necessary basis for version control
+  + Useful for version control
 
 ## 1. RStudio Projects – How?
 
@@ -157,23 +157,23 @@ include_graphics("figures/CreateProject.png")
 ```
 
 ```{r out.extra='style="float:right; padding:10px"', out.width = '55%'}
-include_graphics("figures/CreateNewProject.png")
-```
-
-## 1. RStudio Projects – Version 1: Create new project
-
-```{r out.extra='style="float:left; padding:10px"', out.width = '35%'}
-include_graphics("figures/CreateNewProject.png")
-```
-
-```{r out.extra='style="float:right; padding:10px"', out.width = '55%'}
 include_graphics("figures/CreateNewProjectType.png")
 ```
 
 ## 1. RStudio Projects – Version 1: Create new project
 
+```{r out.extra='style="float:left; padding:10px"', out.width = '35%'}
+include_graphics("figures/CreateNewProjectType.png")
+```
+
+```{r out.extra='style="float:right; padding:10px"', out.width = '55%'}
+include_graphics("figures/create_new_project.png")
+```
+
+## 1. RStudio Projects – Version 1: Create new project
+
 ```{r out.extra='style="float:left"', out.width = '100%'}
-include_graphics("figures/RProjectSleepstudy.png")
+include_graphics("figures/rproject_sleepstudy.png")
 ```
 
 ## 1. RStudio Projects – Version 2: Create from version control (Git)
@@ -324,7 +324,7 @@ include_graphics("figures/VersionControl.png")
   + (Remote) backup
   + Work together, with collaborators (even simultaneously and parallel: branches, merges, pull requests) - and your future self
   + Web interface for your project and to track issues
-  + Easily connected e.g. to osf.io
+  + Easily connected e.g. to the Open Science Framework (<https://osf.io>)
 
 ## 3. Git + GitHub – Installation
 
@@ -378,7 +378,7 @@ include_graphics("figures/GitHub_create_repo.png")
 - Click "New repository"
   + Decide between "private" or "public". Initialize with a README. Accept default for everything else.
   + Click "Create repository"
-  + Copy the HTTPS
+  + Copy the URL
     
 ## 3. Git + GitHub - How?
 
@@ -389,18 +389,21 @@ include_graphics("figures/GitHub_create_repo.png")
 include_graphics("figures/GitHubToR.png")
 ```
 
-## {data-background="figures/RStudioGit.png"}
-## {data-background="figures/UseGit_in_R.png"}
-## {data-background="figures/GitR_select_for_commit.png"}
-## {data-background="figures/GitHubR_commitmessage.png"}
-## {data-background="figures/GitHubR_commit.png"}
-## {data-background="figures/GitHubR_push.png"}
+## {data-background="figures/use_git_in_R.png"}
+## {data-background="figures/git_r_select_for_commit.png"}
+## {data-background="figures/github_r_commit_message.png"}
+## {data-background="figures/github_r_commit.png"}
+## {data-background="figures/github_r_push.png"}
 
 ## 3. Git + GitHub - Tricks & Troubleshooting
 
-- **GitHub:** No long-term guarantee for availability of service (is commercial) 
+- **GitHub:** No long-term guarantee for availability of service (is commercial)
   + **Mirror snapshots on HU servers/OSF/Zenodo/FigShare/...**
-- GitHub: .md-files will be displayed like HTML, CSV will have a nice layout, README.md-files act like the landing page. Use internal link to other files.
+- GitHub generally works better with non-proprietary (text) file formats (e.g., CSV) than with proprietary file formats (e.g., XLSX)
+  + .md-files will be displayed like HTML
+  + CSV will have a nice layout
+  + README.md-files act like the landing page
+  + Use internal links to refer to other files
 
 # 4. Package management: renv
 
