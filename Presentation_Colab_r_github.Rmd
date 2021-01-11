@@ -170,23 +170,13 @@ include_graphics("figures/CreateNewProject.png")
 include_graphics("figures/CreateNewProjectType.png")
 ```
 
-## 1. Working in different contexts: RStudio Projects – Version 1: Create new project
+## 1. RStudio Projects – Version 1: Create new project
 
 ```{r out.extra='style="float:left"', out.width = '100%'}
 include_graphics("figures/RProjectSleepstudy.png")
 ```
 
-## 1. Working in different contexts: RStudio Projects – Version 2: Create from existing directory
-
-```{r out.extra='style="float:left; padding:10px"', out.width = '35%'}
-include_graphics("figures/CreateProject.png")
-```
-
-```{r out.extra='style="float:right; padding:10px"', out.width = '55%'}
-include_graphics("figures/CreateProjectFromExistingDirectory.png")
-```
-
-## 1. Working in different contexts: RStudio Projects – Version 3: Create from version control (Git)
+## 1. RStudio Projects – Version 2: Create from version control (Git)
 
 ```{r out.extra='style="float:left; padding:10px"', out.width = '35%'}
 include_graphics("figures/CreateProject.png")
@@ -196,7 +186,7 @@ include_graphics("figures/CreateProject.png")
 include_graphics("figures/CreateProjectFromVersionControl.png")
 ```
 
-## 1. Working in different contexts: RStudio Projects – Version 3: Create from version control (Git)
+## 1. RStudio Projects – Version 2: Create from version control (Git)
 
 ```{r out.extra='style="float:left; padding:10px"', out.width = '35%'}
 include_graphics("figures/CreateProjectFromVersionControl.png")
@@ -206,7 +196,7 @@ include_graphics("figures/CreateProjectFromVersionControl.png")
 include_graphics("figures/CloneGitRepository.png")
 ```
 
-## 1. Working in different contexts: RStudio Projects – Open and manage projects
+## 1. RStudio Projects – Open and manage projects
 
 ```{r out.extra='style="float:left; padding:10px"', out.width = '25%'}
 include_graphics("figures/OpenProject.png")
@@ -216,13 +206,13 @@ include_graphics("figures/OpenProject.png")
 include_graphics("figures/ChooseProject.png")
 ```
 
-## 1. Working in different contexts: RStudio Projects – Open and manage projects
+## 1. RStudio Projects – Open and manage projects
 
 ```{r, fig.align='center', out.width = '55%'}
 include_graphics("figures/ProjectOptions.png")
 ```
 
-## 1. Working in different contexts: RStudio Projects – Tricks and troubleshooting
+## 1. RStudio Projects – Tricks and troubleshooting
 
 - **Relative paths:** path separator characters vary across systems & anchor points differ depending on contexts
   + **Use the `here`-package (Müller, 2020) to define relative paths within the project: `read.csv(here::here("data", "file_I_want.csv"))`**
@@ -231,7 +221,7 @@ include_graphics("figures/ProjectOptions.png")
 
 Also needs a cool image :)
 
-## 2. Dynamic document generation: RMarkdown - What & Why?
+## 2. RMarkdown - What & Why?
 
 ```{r out.extra='style="float:right; padding:10px"', out.width = '10%'}
 include_graphics("figures/rmarkdown.png")
@@ -377,7 +367,7 @@ include_graphics("figures/commit_history.png")
 include_graphics("figures/GitHub_Push_and_pull.png")
 ```
 
-## 3. Version control: Git + GitHub – Code along
+## 3. Version control: Git + GitHub
 
 ```{r out.extra='style="float:right; padding:10px"', out.width = '70%'}
 include_graphics("figures/GitHub_create_repo.png")
@@ -388,29 +378,8 @@ include_graphics("figures/GitHub_create_repo.png")
   + Decide between "private" or "public". Initialize with a README. Accept default for everything else.
   + Click "Create repository"
   + Copy the HTTPS
-
-## 3. Version control: Git + GitHub – Code along
-
-- **Clone your GitHub repo to your computer**: Type `git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY.git` (your link) in the shell (Terminal in RStudio or on Mac, Git Bash on Windows)
-  + Make this repo your working directory (`cd YOUR-REPOSITORY`), list its files (`ls`), display README (`head README.md`), get info on its connection to GitHub (`git remote show origin`)
-  + **Make a local change**: Add a new line to README, and verify change is noticed: 
-
-```{r echo = TRUE, eval=FALSE}
-echo "This is the first change to my repo" >> README.md
-git status
-```
-
-  + **Stage (`add`), commit (`commit - m "YOUR-COMMIT-MESSAGE"`), and `push` change.** You may be asked for your username and password.
-
-```{r echo = TRUE, eval=FALSE}
-git add -A
-git commit -m "A commit from my local computer"
-git push
-```
-
-    - (Clean up: Delete your local repo (`cd`, and then `rm -rf YOUR-REPO-NAME/`))
     
-## 3. Version control: Git + GitHub – Code along
+## 3. Version control: Git + GitHub
 
 - Clone your repository to RStudio
   + File > New Project > Select "Version Control" > Select "Git" > Enter your repository URL: `https://github.com/YOUR-USERNAME/YOUR-REPOSITORY.git`
