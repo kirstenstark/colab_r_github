@@ -84,7 +84,7 @@ Your code runs and produces identical results<br>*at different time points* and 
 include_graphics("figures/turing.jpg")
 ```
 
-## For example
+## For example...
 
 - Go to https://github.com/KirstenStark/colab_r_github (find this link in the Zoom chat)
   + Select Code > Download Zip
@@ -105,11 +105,11 @@ include_graphics("figures/our_repo.png")
 include_graphics("figures/schedule_icons.png")
 ```
 
-1. **Working in different contexts:** RStudio Projects
+1. **Structuring working directories:** RStudio Projects
 2. **Dynamic document generation:** RMarkdown
 3. **Version control:** Git + GitHub
-4. **Package management**: renv
-5. **Containerization**: Docker
+4. **Package management:** renv
+5. **Containerization:** Docker
 6. **Where to start?**
 
 ## 0. Kudos
@@ -132,10 +132,10 @@ include_graphics("figures/peikert_preprint.png")
 include_graphics("figures/kudos_talks.png")
 ```
 
-# 1. Working in different contexts: RStudio Projects
+# 1. Structuring working directories: RStudio Projects
 
 ```{r fig.align = "right", out.width = '60%'}
-include_graphics("figures/rstudio_managing.png")
+include_graphics("figures/rstudio_projects.jpg")
 ```
 
 
@@ -146,9 +146,23 @@ include_graphics("figures/RStudioProject.png")
 ```
 
 - **What it does**:
-  + Allows to work in multiple different contexts (projects), e.g. one for each experiment
-  + Each project is own working directory, workspace, history, and source documents
+  + Allows working in multiple different contexts (projects), e.g. one for each experiment
+  + Each project has its own working directory, workspace, history, and source documents
   + Each project is associated with a folder on your computer (= working directory)
+  
+## 1. RStudio Projects - What & Why?
+
+```{r out.extra='style="float:right; padding:10px"', out.width = '10%'}
+include_graphics("figures/RStudioProject.png")
+```
+
+- **What it does**:
+  + Allows working in multiple different contexts (projects), e.g. one for each experiment
+  + Each project has its own working directory, workspace, history, and source documents
+  + Each project is associated with a folder on your computer (= working directory)
+    
+<br>
+
 - **Why it helps**:
   + Have a separate, shareable working environment for each experiment
   + Keep all the files associated with a project together — data, scripts, results, figures
@@ -224,15 +238,9 @@ include_graphics("figures/OpenProject.png")
 include_graphics("figures/ChooseProject.png")
 ```
 
-## 1. RStudio Projects – Open and manage projects
+## 1. RStudio Projects – Tricks & troubleshooting
 
-```{r, fig.align='center', out.width = '55%'}
-include_graphics("figures/ProjectOptions.png")
-```
-
-## 1. RStudio Projects – Tricks and troubleshooting
-
-- **Relative paths:** path separator characters vary across systems & anchor points differ depending on contexts
+- **Relative paths:** path separator characters vary across systems, anchor points differ depending on contexts
   + **Use the `here`-package (Müller, 2020) to define relative paths within the project: `read.csv(here::here("data", "file_I_want.csv"))`**
 
 # 2. Dynamic document generation: RMarkdown
@@ -248,9 +256,23 @@ include_graphics("figures/rmarkdown.png")
 ```
 
 - **What it does:**
-  + Creates dynamic documents with embedded chunks of code (R, Python, Julia, Stan, ...), computed results , written text etc. (= LaTeX) 
+  + Creates dynamic documents with embedded chunks of code (R, Python, Julia, Stan, ...), computed results , written text, etc. (= LaTeX) 
   + Markdown-files can be exported to documents (docx, rtf), presentations, pdfs, websites (html), ... <footnote content="packages"> e.g using the `knitr` (Xie, 2015, 2020) and `tinytex` (Xie, 2015, 2020; for pdfs)</footnote>
   + R code is dynamically rendered, and can be given in separate chunks ('''{r}   ''') or inline (' r  … ')
+
+## 2. RMarkdown - What & Why?
+
+```{r out.extra='style="float:right; padding:10px"', out.width = '10%'}
+include_graphics("figures/rmarkdown.png")
+```
+
+- **What it does:**
+  + Creates dynamic documents with embedded chunks of code (R, Python, Julia, Stan, ...), computed results , written text, etc. (= LaTeX) 
+  + Markdown-files can be exported to documents (docx, rtf), presentations, pdfs, websites (html), ... <footnote content="packages"> e.g using the `knitr` (Xie, 2015, 2020) and `tinytex` (Xie, 2015, 2020; for pdfs)</footnote>
+  + R code is dynamically rendered, and can be given in separate chunks ('''{r}   ''') or inline (' r  … ')
+  
+<br>
+
 - **Why it helps:**
   + Simple language ($\neq$ LaTeX)
   + Integrates directly with statistical software (RStudio)
@@ -260,12 +282,12 @@ include_graphics("figures/rmarkdown.png")
 ## 2. RMarkdown - How?
 
 - Installation: `install.packages("rmarkdown")` (Allaire et al., 2017)
-- Install 'knitr' package for easy access: `install.packages("knitr")` (Xie 2015, 2020)
+- Install 'knitr' package for easy access: `install.packages("knitr")` (Xie, 2015, 2020)
 
 ## 2. RMarkdown - How?
 
-- Installation: `install.packages("rmarkdown")`  (Allaire et al., 2017)
-- Install 'knitr' package for easy access: `install.packages("knitr")` (Xie 2015, 2020)
+- Installation: `install.packages("rmarkdown")` (Allaire et al., 2017)
+- Install 'knitr' package for easy access: `install.packages("knitr")` (Xie, 2015, 2020)
 - Open a markdown file (.Rmd): File > New File > R Markdown
 
 ```{r out.extra='style="float:left"', out.width = '35%'}
@@ -274,8 +296,9 @@ include_graphics("figures/RMarkdown_newfile.png")
 
 ## 2. RMarkdown - How?
 
-- Installation: `install.packages("rmarkdown")`
-- Open a markdown file: File > New File > R Markdown
+- Installation: `install.packages("rmarkdown")` (Allaire et al., 2017)
+- Install 'knitr' package for easy access: `install.packages("knitr")` (Xie 2015, 2020)
+- Open a markdown file (.Rmd): File > New File > R Markdown
 
 ```{r out.extra='style="float:left; padding:10px"', out.width = '35%'}
 include_graphics("figures/RMarkdown_newfile.png")
@@ -293,8 +316,6 @@ include_graphics("figures/RMarkdown_fileformat.png")
 ## {data-background="figures/rmarkdown_file_rcode.png"}
 
 ## {data-background="figures/rmarkdown_file_knit.png"}
-
-## {data-background="figures/rmarkdown_file.png"}
 
 ## {data-background="figures/rmarkdown_output.png"}
 
@@ -331,11 +352,14 @@ include_graphics("figures/jesus.jpg")
 
 ## 3. Git + GitHub - What & Why?
 
+```{r out.extra='style="float:right; padding:10px"', out.width = '20%'}
+include_graphics("figures/git_github.png")
+```
+
 - **What it does:**
-  + Tracks changes to files (data and code) over time: Sequence of "snapshots" (**commits**)
+  + Tracks changes to files (data and code) over time: Sequence of "snapshots" (**commits**), organized in **repositories**
   + Allows to "go back in time": Recall older versions or revert the entire project
   + Changes between commits can be compared
-  + Organized in **repositories**: Collection of all snapshots
   + **GitHub**: Popular server for sharing materials (**privately or publicly**) and collaborating via git (also: GitLab and others)
   
 ## 3. Git + GitHub - What & Why?
@@ -349,7 +373,7 @@ include_graphics("figures/VersionControl.png")
   + Clean up code
   + Language agnostic
   + (Remote) backup
-  + Work together, with collaborators (even simultaneously and parallel: branches, merges, pull requests) - and your future self
+  + Work together with collaborators (even simultaneously and in parallel: branches, merges, pull requests) - and your future self
   + Web interface for your project and to track issues
   + Easily connected e.g. to the Open Science Framework (<https://osf.io>)
 
@@ -357,8 +381,8 @@ include_graphics("figures/VersionControl.png")
 
 - Register an account with GitHub: <https://github.com/>
 - (Update R, RStudio, and your packages: `update.packages(ask = FALSE, checkBuilt = TRUE)`)
-- **Is Git installed?** Open your shell ("Terminal" in RStudio or on Mac, "Eingabeaufforderung" on Windows), and type: `git --version`. If "`git: command not found`": 
-- **Install Git - Mac**: Mac offers to install developer command line developer tools automatically. Click "Install". If you don't get the offer, type: `xcode-select --install`. Restart R.
+- **Is Git installed?** Open your shell ("Terminal" in RStudio and on Mac, "Eingabeaufforderung" on Windows), and type: `git --version`. If "`git: command not found`": 
+- **Install Git - Mac**: Mac automatically offers installing developer command line developer tools. Click "Install". If you don't get the offer, type: `xcode-select --install`. Restart R.
 - **Install Git - Windows**: Install "Git Bash" (<https://gitforwindows.org>). Accept default settings. When asked about "Adjusting your PATH environment", select "Git from the command line and also from 3-rd party software". Restart R.
 - Configure Git: In the (Git Bash) shell, type
   + `git config --global user.name 'your name'`
@@ -401,8 +425,8 @@ include_graphics("figures/GitHub_create_repo.png")
 ```
 
 - Go to <https://github.com/> and log in
-- Click "New repository"
-  + Decide between "private" or "public". Initialize with a README. Accept default for everything else.
+- Click on "New repository"
+  + Decide between "private" or "public". Initialize with a README. Accept default settings for everything else.
   + Click "Create repository"
   + Copy the URL
     
@@ -423,11 +447,11 @@ include_graphics("figures/GitHubToR.png")
 
 ## 3. Git + GitHub - Tricks & Troubleshooting
 
-- **GitHub:** No long-term guarantee for availability of service (is commercial)
+- **GitHub:** No long-term guarantee for availability of service (GitHub is commercial)
   + **Mirror snapshots on HU servers/OSF/Zenodo/FigShare/...**
 - GitHub generally works better with non-proprietary (text) file formats (e.g., CSV) than with proprietary file formats (e.g., XLSX)
   + .md-files will be displayed like HTML
-  + CSV will have a nice layout
+  + .csv-files will have a nice layout
   + README.md-files act like the landing page
   + Use internal links to refer to other files
 
@@ -640,22 +664,35 @@ include_graphics("figures/code_along.png")
 
 ## Code along: GitHub repository and R project
 
-- **Create a GitHub repository**: Go to <https://github.com/> > Enter your username and password > Click "New" Repository > Settings: Create a private repository (you can make it public later), add a README file, accept default settings for everything else. Click "Create repository" > Copy the URL
-- **Open R Studio and create an R project**: File > New Project... > Select Version Control > Select Git > Enter the repository URL (the URL you just copied: <https://github.com/USERNAME/REPOSITORY-NAME>), choose a project directory name and where it should be saved. Click "Create Project". 
+- **Create a GitHub repository**: 
+  + Go to <https://github.com/>. > Enter your username and password. 
+  + Click on "New" repository 
+    - Settings: Create a private repository (you can make it public later), add a README file, and accept the default settings for everything else.
+  + Click on "Create repository" 
+  + Copy the URL
+- **Open R Studio and create an R project**: 
+  + File > New Project... > Select "Version Control" > Select "Git"
+  + Enter the URL you just copied (<https://github.com/USERNAME/REPOSITORY-NAME>), choose a project directory name, and where it should be saved. 
+  + Click on "Create Project". 
     - <span style="color: green; font-size: 1;">(Terminal alternative: 'git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY.git'. Then 'cd YOUR-REPOSITORY')</span> 
-- **Make changes to README file, commit, and push**
-  + **Open your Readme file**: File > Open File...
-  + Make changes to your README ("This is my first GitHub repository") 
+    
+## Code along: Stage, commit, and push to GitHub
+
+- **Make changes to your README file, commit, and push**
+  + **Open your README file**: File > Open File...
+  + Make changes to your README file (e.g., type "This is my first GitHub repository") 
     - <span style="color: green; font-size: 1;">(Terminal alternative: 'echo "YOUR-TEXT" >> README.md')</span>
-  + **Commit**: Open the "Git" tab (next to the Environment) > Push the "Commit" button > *Stage* your change > Enter a *commit message* > Click on "Commit". 
+  + **Commit**: Open the "Git" tab (next to the Environment) > Click on the "Commit" button > *Stage* your change > Enter a *commit message* > Click on "Commit" 
   + **Push to GitHub**: Click on "Push" 
-    - <span style="color: green; font-size: 1; ">( Terminal alternative: "git add -A'. Then 'git commit -m "COMMIT-MESSAGE"'. Then 'git push')</span>
+    - <span style="color: green; font-size: 1; ">(Terminal alternative: "git add -A'. Then 'git commit -m "COMMIT-MESSAGE"'. Then 'git push')</span>
 
 ## Code along: RMarkdown
 
 - **Install RMarkdown**: Type to console `install.packages("rmarkdown")` and `install.packages("knitr")`
-- **Create an RMarkdown file**: File > New File > R Markdown... > Select "Document" > Choose a title (e.g. "analyses_sleepstudy") and HTML as default output format. Click "OK".
-- **Make changes to your Markdown file**: Enter a first section title (`# Random number generation`), a text ("Here, we generate 10 random numbers between 0 and 10"), and an r code chunk (Insert > R):
+- **Create an RMarkdown file**: 
+  + File > New File > R Markdown... > Select "Document" 
+  + Choose a title (e.g. "analyses") and HTML as the default output format > Click "OK"
+- **Make changes to your Markdown file**: Enter a first section title ("# Random number generation"), a text ("Here, we generate 10 random numbers between 0 and 10"), and an R code chunk (Insert > R):
 
 ```{r echo=TRUE, eval=FALSE}
 set.seed(1234)
