@@ -119,7 +119,10 @@ include_graphics("figures/kudos_talks.png")
 
 # 1. Working in different contexts: RStudio Projects
 
-Needs a cool image :)
+```{r fig.align = "right", out.width = '60%'}
+include_graphics("figures/rstudio_managing.png")
+```
+
 
 ## 1. RStudio Projects - What & Why?
 
@@ -219,7 +222,7 @@ include_graphics("figures/ProjectOptions.png")
 
 # 2. Dynamic document generation: RMarkdown
 
-```{r, fig.align='right', out.width = '50%'}
+```{r, fig.align='right', out.width = '55%'}
 include_graphics("figures/rmarkdown_figure.png")
 ```
 
@@ -598,7 +601,9 @@ include_graphics("figures/great_code.jpg")
 
 # 7. Code along
 
-Needs a cool image
+```{r fig.align = "right", out.width = '50%'}
+include_graphics("figures/code_along.png")
+```
 
 ## Code along: GitHub repository and R project
 
