@@ -286,6 +286,7 @@ include_graphics("figures/RMarkdown_output_files.png")
 - Knit to pdf: You need a **LaTeX-installation**
   + **`TinyTeX`** (Xie, 2010) is a light-weight, cross-platform distribution (`install.packages("tinytex"); tinytex::install_tinytex())`)
   + Separate code chunks by a blank line
+- Write and prepare APA journal articles: The **`Papaja`-package (Aust & Barth, 2020)** contains an R Markdown template for APA manuscripts, and helper functions to report results and generate tables in APA-style
 - Knit older .R code files: Put **#'** in front of any top-level prose, including the header, or use: 
 
 ```{r echo = TRUE, eval=FALSE}
