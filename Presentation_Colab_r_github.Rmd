@@ -84,6 +84,21 @@ Your code runs and produces identical results<br>*at different time points* and 
 include_graphics("figures/turing.jpg")
 ```
 
+## For example
+
+- Go to https://github.com/KirstenStark/colab_r_github (find this link in the Zoom chat)
+  + Select Code > Download Zip
+- You can also do this via git from the command line:
+  + Note that this will download in your "home" directory (which you can find out typing `pwd`)
+
+```{r eval=FALSE, echo=TRUE}
+git clone https://github.com/KirstenStark/colab_r_github
+```
+
+```{r out.width='80%', fig.align='center'}
+include_graphics("figures/our_repo.png")
+```
+
 ## Schedule
 
 ```{r out.extra='style="float:right; padding:10px"', out.width='30%'}
@@ -265,17 +280,24 @@ include_graphics("figures/RMarkdown_newfile.png")
 ```{r out.extra='style="float:left; padding:10px"', out.width = '35%'}
 include_graphics("figures/RMarkdown_newfile.png")
 ```
-```{r out.extra='style="float:right; padding:10px"', out.width = '55%'}
+```{r out.extra='style="float:right; padding:10px"', out.width = '45%'}
 include_graphics("figures/RMarkdown_fileformat.png")
 ```
 
 ## {data-background="figures/rmarkdown_file_plain.png"}
+
 ## {data-background="figures/rmarkdown_file_header.png"}
+
 ## {data-background="figures/rmarkdown_file_text.png"}
+
 ## {data-background="figures/rmarkdown_file_rcode.png"}
+
 ## {data-background="figures/rmarkdown_file_knit.png"}
+
 ## {data-background="figures/rmarkdown_file.png"}
+
 ## {data-background="figures/rmarkdown_output.png"}
+
 ## {data-background="figures/rmarkdown_output.png"}
 
 ```{r fig.align = "right", out.width = '35%'}
