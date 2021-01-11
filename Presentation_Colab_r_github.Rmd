@@ -523,27 +523,37 @@ include_graphics("figures/docker.png")
 
 ## 5. Docker – How?
 
-- Install Docker from https://docs.docker.com/installation/
-- From the terminal, start a R/RStudio container and mount your local project folder:
+1. Install Docker from https://docs.docker.com/installation/ and run it
+2. Select the appropiate Docker image (see https://hub.docker.com/search?q=rocker&type=image)
+    + `rocker/rstudio` contains R and RStudio
+    + `rocker/tidyverse` adds the tidyverse packages
+    + `rocker/verse` adds LaTeX
+2. From the terminal, run a Docker container based on this image:
 
 ```{bash, echo=TRUE, eval=FALSE}
-docker run -d  -e PASSWORD=1234 -p 8787:8787 -v /path/to/your/project:/home/rstudio/ rocker/rstudio
+docker run -e PASSWORD=1234 -p 8787:8787 -v /path/to/your/project:/home/rstudio/ rocker/rstudio
 ```
 
-- You can then access RStudio (running in the container) by opening http://localhost:8787 in your web browser (username: rstudio, password: 1234)
-- You can also build your own container by:
-  + Choosing a base image from https://hub.docker.com/u/rocker (including the tidyverse, LaTeX etc.)
-  + Creating a `Dockerfile` in your project directy, specyfing additional steps to execute when building the container, e.g., `install.packages("renv"); renv::restore()`
-  
+- `-e PASSWORD=1234 -p 8787:8787` makes it possible to connect to RStudio (running in the container) from your web browser by opening http://localhost:8787 (username: rstudio, password: 1234)
+- `-v /path/to/your/project:/home/rstudio/` makes your project available within the container
+- `rocker/rstudio` is the name of the Docker image you have chosen above
+
+## 5. Docker – How?
+
+- You can get additional flexibility by creating your own *Dockerfile*
+  + A Dockerfile is a text file which acts like a recipe to build your own Docker container<br>(which you can then run)
+  + It is based on an existing Docker image (e.g., `rocker/verse`)
+  + It can contain additional lines of code to install software (e.g., `renv::restore()`)<br>or run scripts (e.g., `rmarkdown::render(...)`)
+
 ```{r out.extra='style="float:right; padding:10px"', out.width = '10%'}
 include_graphics("figures/docker.png")
 ```
 
+<br>
+
 - For detailled instructions, see [Boettiger & Eddeulbuettel (2017)](https://journal.r-project.org/archive/2017/RJ-2017-065/index.html) and<br>[Peikert & Brandmaier (2020)](https://psyarxiv.com/8xzqy/)
 
-## 5. Docker – How?
-
-- Example for a Dockerfile:
+## 5. Docker – Example of a Dockerfile
 
 ```{bash, echo=TRUE, eval=FALSE}
 # This as a text file stored with the name "Dockerfile" in your project directory.
@@ -563,13 +573,16 @@ COPY renv.lock renv.lock
 # Install package versions stored in the lockfile
 RUN R -e "renv::consent(provided = TRUE)"
 RUN R -e "renv::restore(prompt = FALSE)"
+
+# When the container is run, render the report / mansucript
+ENTRYPOINT Rscript -e "rmarkdown::render('my_manuscript.Rmd')"
 ```
 
-## 5. Docker – Beyond Docker
+## 5. Docker – And beyond
 
-- Some additional tools based on Docker:
+- Docker is the basis for other tools for running analyses in the cloud or on high performance computing (HPC) clusters:
   + With **binder** (https://mybinder.org) and **Code Ocean** (https://codeocean.com), you can run your analysis in the cloud; they will even create the `Dockerfile` for you if you don't have your own one
-  + **Singularity** (https://sylabs.io) is a fully compatible, open source clone of Docker which you can use on systems where you don't have root access (e.g., on high performance clusters)
+  + **Singularity** (https://sylabs.io) is a fully compatible, open source clone of Docker which you can use on systems where you don't have root access (e.g., on HPC clusters)
 
 <br>
 
