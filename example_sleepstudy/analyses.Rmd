@@ -10,17 +10,25 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ## Analysis of the lmer-build-in dataset "sleepstudy"
+
 ### Load and inspect data
+
 The *sleepstudy* dataset (described in Belenky et al., 2003) is a data set build into the lme4-package.The average reaction time per day for subjects in a sleep deprivation study is reported. Find more info here <https://rdrr.io/cran/lme4/man/sleepstudy.html>.  
 **Load lme4-package**
+
 ```{r load packages}
 library(lme4)
 ```
+
 **Inspect data**
-```{r data inspection}
+```{r}
 str(sleepstudy)
+```
+
+```{r}
 mean(sleepstudy$Reaction)
 ```
+
 ```{r echo = FALSE}
 plot(sleepstudy$Reaction ~ sleepstudy$Days)
 ```
