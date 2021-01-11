@@ -264,17 +264,17 @@ include_graphics("figures/RMarkdown_newfile.png")
 include_graphics("figures/RMarkdown_fileformat.png")
 ```
 
-## {data-background="figures/RMarkdown_file_plain.png"}
-## {data-background="figures/RMarkdown_file_header.png"}
-## {data-background="figures/RMarkdown_file_text.png"}
-## {data-background="figures/RMarkdown_file_Rcode.png"}
-## {data-background="figures/RMarkdown_file_knit.png"}
-## {data-background="figures/RMarkdownFile.png"}
-## {data-background="figures/RMarkdown_output.png"}
-## {data-background="figures/RMarkdown_output.png"}
+## {data-background="figures/rmarkdown_file_plain.png"}
+## {data-background="figures/rmarkdown_file_header.png"}
+## {data-background="figures/rmarkdown_file_text.png"}
+## {data-background="figures/rmarkdown_file_rcode.png"}
+## {data-background="figures/rmarkdown_file_knit.png"}
+## {data-background="figures/rmarkdown_file.png"}
+## {data-background="figures/rmarkdown_output.png"}
+## {data-background="figures/rmarkdown_output.png"}
 
 ```{r fig.align = "right", out.width = '35%'}
-include_graphics("figures/RMarkdown_output_files.png")
+include_graphics("figures/rmarkdown_output_files.png")
 ```
 
 ## 2. RMarkdown - Tricks & troubleshooting
