@@ -539,7 +539,7 @@ include_graphics("figures/renv.png")
 ```
 
 - There may be some (inconsequential) warnings when switching between Mac and Windows
-- Installing and loading packages may take a while, especially if your project lives on a network drive<br>(such as `N:/`)
+- Installing and loading packages may take a while, especially if your project lives on a network drive (such as `N:/`)
 - For installing packages that are not on CRAN you can use `remotes::install_github()` and the like. Note, however, that at least on Windows, you may need to install additional tools for building these packages (via `renv::equip()` and/or from https://cran.r-project.org/bin/windows/Rtools/)
 
 # 5. Containerization: Docker
