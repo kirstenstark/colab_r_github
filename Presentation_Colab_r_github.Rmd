@@ -72,7 +72,7 @@ div.footnotes {
 
 ### Collaborating:
 
-You and your collaborators (including your<br>future self) can access the code *and its history*
+You and your collaborators (including your<br>future self) can access *the code and its history*
 
 ### Reproducible:
 
@@ -89,7 +89,7 @@ include_graphics("figures/turing.jpg")
 - Go to https://github.com/KirstenStark/colab_r_github (find this link in the Zoom chat)
   + Select Code > Download Zip
 - You can also do this via git from the command line:
-  + Note that this will download in your "home" directory (which you can find out typing `pwd`)
+  + Note that this will download to your "home" directory (which you can find out typing `pwd`)
 
 ```{r eval=FALSE, echo=TRUE}
 git clone https://github.com/KirstenStark/colab_r_github
@@ -485,7 +485,7 @@ include_graphics("figures/renv.png")
 
 - **Why it helps:**
   + Keeps package versions untouched by other projects
-  + Allows you to revert to the previous state when an update has broken your analysis
+  + Allows you to revert to the previous state when a package update has broken your analysis
   + Makes it easier to share package versions with your collaborators (e.g., via GitHub)
   + Can also keep track of Python packages
 
@@ -497,7 +497,7 @@ include_graphics("figures/renv.png")
 
 1. Install renv just like any other R package via `install.packages(renv)`
 2. Open your project and initialize your project library via `renv::init()`
-3. After successfully installing or a package, use `renv::snapshot()`. This will write the current version of all packages that are installed (and used) in the project to the lockfile.
+3. After successfully installing or updating a package, use `renv::snapshot()`. This will write the current version of all packages that are used in the project to the lockfile.
 4. If you want to revert to previous state (e.g., if an update to any of your packages has caused problems), use `renv::restore()`
 
 ```{r out.extra='style="float:left; padding:10px"', out.width = '60%'}
@@ -586,7 +586,7 @@ docker run -e PASSWORD=1234 -p 8787:8787 -v /path/to/your/project:/home/rstudio/
 
 ## 5. Docker – How?
 
-- You can get additional flexibility by creating your own *Dockerfile*
+- You can get additional flexibility by creating your own `Dockerfile`
   + A Dockerfile is a text file which acts like a recipe to build your own Docker container<br>(which you can then run)
   + It is based on an existing Docker image (e.g., `rocker/verse`)
   + It can contain additional lines of code to install software (e.g., `renv::restore()`)<br>or run scripts (e.g., `rmarkdown::render(...)`)
@@ -597,7 +597,7 @@ include_graphics("figures/docker.png")
 
 <br>
 
-- For detailled instructions, see [Boettiger & Eddeulbuettel (2017)](https://journal.r-project.org/archive/2017/RJ-2017-065/index.html) and<br>[Peikert & Brandmaier (2020)](https://psyarxiv.com/8xzqy/)
+- For detailed instructions, see [Boettiger & Eddeulbuettel (2017)](https://journal.r-project.org/archive/2017/RJ-2017-065/index.html) and<br>[Peikert & Brandmaier (2020)](https://psyarxiv.com/8xzqy/)
 
 ## 5. Docker – Example of a Dockerfile
 
@@ -732,7 +732,12 @@ cowsay::say(text, "cow")
 
 # Thank you.
 
-```{r fig.align='right', out.width='80%'}
-include_graphics("figures/castle.png")
+```{r out.extra='style="float:left; padding:10px"', out.width='50%'}
+include_graphics("figures/r_first.png")
 ```
 
+<br><br>
+
+```{r out.extra='style="float:right; padding:10px"', out.width='45%'}
+include_graphics("figures/r_then.png")
+```
