@@ -662,53 +662,105 @@ include_graphics("figures/great_code.jpg")
 include_graphics("figures/code_along.png")
 ```
 
-## Code along: GitHub repository and R project
+## Code along: GitHub repository
 
 - **Create a GitHub repository**: 
-  + Go to <https://github.com/>. > Enter your username and password. 
-  + Click on "New" repository 
-    - Settings: Create a private repository (you can make it public later), add a README file, and accept the default settings for everything else.
+  + Go to <https://github.com/login>. Enter your username and password. 
+  + Click on  ![](figures/gh_new.png){#id .class width=50px} .
+  + Choose a name for your repository (e.g., "random_numbers").
+  + Decide if your repository should be public or private. You can change this later.
+  + Select "Add a README file". Leave the rest unchecked.
   + Click on "Create repository" 
-  + Copy the URL
+  + Copy the URL from the address bar (e.g., <https://github.com/username/random_numbers.git>).
+
+## Code along: RStudio Project
+
 - **Open R Studio and create an R project**: 
-  + File > New Project... > Select "Version Control" > Select "Git"
-  + Enter the URL you just copied (<https://github.com/USERNAME/REPOSITORY-NAME>), choose a project directory name, and where it should be saved. 
-  + Click on "Create Project". 
-    - <span style="color: green; font-size: 1;">(Terminal alternative: 'git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY.git'. Then 'cd YOUR-REPOSITORY')</span> 
+  + File > New Project... > Version Control > Git
+  + Paste the URL and choose where to create the project folder (Browse...). Leave the project name unchanged. 
+  + Click on "Create Project".
+  + If your project is private, you may be asked to provide your GitHub username and password.
+  + Alternatively, you can clone your repository from the terminal:
+
+```{r echo=TRUE, eval=FALSE}
+git clone https://github.com/username/random_numbers.git
+cd random_numbers
+```
     
 ## Code along: Stage, commit, and push to GitHub
 
-- **Make changes to your README file, commit, and push**
-  + **Open your README file**: File > Open File...
-  + Make changes to your README file (e.g., type "This is my first GitHub repository") 
-    - <span style="color: green; font-size: 1;">(Terminal alternative: 'echo "YOUR-TEXT" >> README.md')</span>
-  + **Commit**: Open the "Git" tab (next to the Environment) > Click on the "Commit" button > *Stage* your change > Enter a *commit message* > Click on "Commit" 
-  + **Push to GitHub**: Click on "Push" 
-    - <span style="color: green; font-size: 1; ">(Terminal alternative: "git add -A'. Then 'git commit -m "COMMIT-MESSAGE"'. Then 'git push')</span>
+- **Make a change to your README file**:
+  + Open the `README.md` file from the "Files" pane
+  + Make a change to the README (e.g., add a line saying "This is my first GitHub repository")
+  + Terminal alternative:
+
+```{r echo=TRUE, eval=FALSE}
+echo "This is my first GitHub repository" >> README.md
+```
+
+## Code along: Stage, commit, and push to GitHub
+
+  + **Commit**:
+    - Open the Git pane (next to the Environment) > Click on the "Commit" button
+    - In the window that pops up, *stage* your changed files (by ticking them) > Click on "Commit" > Enter a *commit message* (e.g., "edited readme") > Click on "Commit"
+    - Terminal alternative:
+
+```{r echo=TRUE, eval=FALSE}
+echo "git add -A"
+git commit -m "edited readme"
+```
+
+  + **Push to GitHub**:
+    - Click on "Push" > Close
+    - Terminal alternative:
+    
+```{r echo=TRUE, eval=FALSE}
+git push
+```
 
 ## Code along: RMarkdown
 
-- **Install RMarkdown**: Type to console `install.packages("rmarkdown")` and `install.packages("knitr")`
+- **Install RMarkdown**: Type `install.packages(c("rmarkdown", "knitr"))` to the console
 - **Create an RMarkdown file**: 
-  + File > New File > R Markdown... > Select "Document" 
-  + Choose a title (e.g. "analyses") and HTML as the default output format > Click "OK"
-- **Make changes to your Markdown file**: Enter a first section title ("# Random number generation"), a text ("Here, we generate 10 random numbers between 0 and 10"), and an R code chunk (Insert > R):
+  + File > New File > R Markdown...
+  + Choose "From template" and "GitHub Document (Markdown)" > Ok
+
+## Code along: RMarkdown
+
+- **Make changes to your Markdown file**:
+  + Change the title from "Untitled" to "My analysis"
+  + Remove the template text (everthing starting from "## GitHub Documents" at ~ line 10).
+  + Enter a section title ("## Random number generation"), some text ("Here, we generate a random number between 0 and 10."), and an R code chunk (via "Insert" > "R"):
 
 ```{r echo=TRUE, eval=FALSE}
 set.seed(1234)
-numbers <- sample(0:10, 10, replace = FALSE)
-print(numbers)
+number <- sample(x = 0:10, size = 1, replace = FALSE)
+print(number)
 ```
 
-- **Knit your Markdown file**: Knit button
-- **Commit and push your change**: Click on "Commit" > Stage files > Enter commit message > Click on "Commit" > Click on "Push"
+- **Knit your Markdown**: Click on the "Knit" button. You may be asked to choose a file name<br>(e.g., "my_analysis.Rmd")
+- **Commit and push your change**: From the Git pane: Commit > Stage files > Enter commit message > Commit > Push
+
+## Code along: RMarkdown
+
+```{r fig.align='center', out.width='80%'}
+include_graphics("figures/my_analysis_rmd.png")
+```
+
+## Code along: RMarkdown
+
+```{r fig.align='center', out.width='70%'}
+include_graphics("figures/commit_my_analysis.png")
+```
 
 ## Code along: renv
 
 - In the "Package" pane, check if you have renv installed
   + If not: `install.packages("renv")`
 - Initialize your local project library by typing in the console: `renv::init()`
+  + You should receive a message like "`* Project '~/random_numbers' loaded. [renv 0.12.0]`"
   + If you want to, take a look at the `renv.lock` from the "Files" pane in RStudio
+  + Now, we are ready to install and use some new packages.
 
 ## Code along: renv
 
@@ -718,17 +770,27 @@ print(numbers)
 install.packages("cowsay")
 ```
 
-- renv only keeps track of packages that are actually used in one or more of your scripts. Therefore, create a new code chunk in your RMarkdown file (Insert > R) and paste:
+- Use this package in your RMarkdown file by changing your code chunk to:
 
 ```{r, echo=TRUE, eval=FALSE}
-text <- paste("My favorite numbers are", numbers)
+set.seed(1234)
+number <- sample(x = 0:10, size = 1, replace = FALSE)
+text <- paste("My favorite number is", number)
 cowsay::say(text, "cow")
 ```
 
-- Save and/or knit the file.
+- Knit the file. If you are asked to install or update additional packages, select "Yes".
 - Check the status of your project library by typing to the console: `renv::status()`
-- You'll notice that the cowsay package is not yet added to your lockfile. Do so by typing to the console: `renv::snapshot()`
-- Commit and push your changes to GitHub. Congrats! You now have a reproducible project.
+- You'll notice that some packages are not yet added to your lockfile. Do so by typing to the console: `renv::snapshot()` > y > *Enter*
+- Commit and push your changes to GitHub.
+
+## Congrats!
+
+You now have a (somewhat) reproducible analysis.
+
+```{r fig.align='center', out.width='60%'}
+include_graphics("figures/cow_on_github.png")
+```
 
 # Thank you.
 
