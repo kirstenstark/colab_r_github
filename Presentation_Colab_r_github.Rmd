@@ -297,7 +297,7 @@ include_graphics("figures/RMarkdown_newfile.png")
 ## 2. RMarkdown - How?
 
 - Installation: `install.packages("rmarkdown")` (Allaire et al., 2017)
-- Install 'knitr' package for easy access: `install.packages("knitr")` (Xie 2015, 2020)
+- Install 'knitr' package for easy access: `install.packages("knitr")` (Xie, 2015, 2020)
 - Open a markdown file (.Rmd): File > New File > R Markdown
 
 ```{r out.extra='style="float:left; padding:10px"', out.width = '35%'}
